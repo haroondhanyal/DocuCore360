@@ -48,13 +48,15 @@ Open the account card at the top of the sidebar to view your name and photo, edi
 
 Your private profile includes your name, email, contact number, job title, location and bio. Use the pencil and delete icons directly on your photo to replace or remove a JPG, PNG or WebP avatar; the app creates a square avatar and updates the sidebar and header. Email changes require your current password, revoke existing sessions and clear verification until the new address is verified.
 
-Workspace **Settings** (`/settings`) offers light, dark and system modes plus eight colour palettes: Emerald, Blue, Purple, Rose, Red, Orange, Teal and Gray. High contrast and colourful header/buttons are independent options. Changes preview immediately and persist in this browser; **Save appearance** also saves them to your signed-in account for another browser or device.
+Workspace **Settings** (`/settings`) has a **Workspace colour theme** dropdown and a separate **Display mode** selector for light, dark and system modes. Eight full workspace palettes colour the background, sidebar, panels and controls: Emerald, Blue, Purple, Rose, Red, Orange, Teal and Gray. High contrast and colourful header/buttons are independent options. Changes preview immediately and persist in this browser; **Save appearance** also saves them to your signed-in account for another browser or device.
 
 Personal **Account settings** (`/profile/settings`) is available from the sidebar profile menu and profile page. Change your password there; a successful change ends existing sessions and asks you to sign in again. Every password input—including login, signup, reset, account confirmation and protected PDF tools—has an accessible show/hide eye button.
 
 Use **Settings → View all records** (`/records`) to browse your own saved files and versions, processing history and account drafts. The existing library pagination and history limits still apply: files load 50 per page, history shows the latest 200 records, and an account can retain up to 20 editable drafts.
 
 **All tools** in the sidebar displays all 29 tools. PDF tools, Image tools, Convert, OCR and Sign & protect display their matching tools; the selected category stays in sync with the URL and browser back/forward navigation.
+
+**Our privacy approach** (`/privacy`) explains browser processing, explicit uploads, account data and retention. **Help & resources** (`/help`) is a separate page for tool guidance, limits and troubleshooting.
 
 Core document tools can be used without an account; saved files, account drafts and profiles require sign-in.
 

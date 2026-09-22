@@ -1973,3 +1973,17 @@ small {
 :root[data-accent="gray"]:not(.dark):not(.high-contrast) {
   --bg: #f1f3f5;
 }
+
+/* Full workspace palettes, independent of display mode and contrast. */
+:root[data-accent]:not(.dark):not(.high-contrast) {
+  --bg: color-mix(in srgb, var(--primary) 7%, white);
+  --surface: color-mix(in srgb, var(--primary) 2%, white);
+  --sidebar: color-mix(in srgb, var(--primary) 11%, white);
+  --line: color-mix(in srgb, var(--primary) 20%, white);
+}
+:root.dark[data-accent]:not(.high-contrast) {
+  --bg: color-mix(in srgb, var(--primary) 10%, #080b10);
+  --surface: color-mix(in srgb, var(--primary) 16%, #080b10);
+  --sidebar: color-mix(in srgb, var(--primary) 20%, #080b10);
+  --line: color-mix(in srgb, var(--primary) 30%, #080b10);
+}

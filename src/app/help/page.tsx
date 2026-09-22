@@ -1,12 +1,12 @@
 import Link from "next/link";
-export const metadata = { title: "Help & privacy" };
+export const metadata = { title: "Help & resources" };
 export default function Page() {
   return (
     <>
       <div className="page-intro">
         <div>
-          <h1>A little clarity goes a long way.</h1>
-          <p>How DocuCore works, and how we handle your documents.</p>
+          <h1>Help & resources</h1>
+          <p>Guides, supported formats and answers for your document workspace.</p>
         </div>
       </div>
       <div className="panel prose max-w-3xl">
@@ -16,20 +16,6 @@ export default function Page() {
           duplicate or delete pages, insert blank pages, convert images to PDF, and export PDF pages
           as JPG, PNG or WebP. OCR, image editing, basic Office conversion, PDF forms, redaction and
           AES-256 protection also run on your device.
-        </p>
-        <h2>Your files. Your choice.</h2>
-        <p>
-          Guest tool inputs and results stay in browser memory unless you explicitly save a local
-          editor draft. Local drafts persist in this browser profile until deleted. Signing in does
-          not automatically upload a document. Only choosing “Save to My Files” sends the selected
-          document to this application’s server, where it stays until you delete it or delete your
-          account.
-        </p>
-        <p>
-          Saved files live outside the public web directory and require your session to download.
-          Temporary server assets, if created by future tools, carry an expiration time and are
-          removed by the scheduled cleanup command. Deployment owners must configure that schedule.
-          We do not claim that every future conversion will happen locally.
         </p>
         <h2>Supported formats and limits</h2>
         <p>
@@ -65,9 +51,9 @@ export default function Page() {
           <details>
             <summary>Can I edit existing text or run OCR?</summary>
             <p>
-              The PDF editor supports visual text replacement overlays. English OCR creates editable
-              text and searchable PDFs. The separate Redact PDF tool rebuilds page images and
-              discards underlying text. Exact native PDF text editing is not supported.
+              The PDF editor supports visual text replacement overlays. Multilingual OCR creates
+              editable text and searchable PDFs. The separate Redact PDF tool rebuilds page images
+              and discards underlying text. Exact native PDF text editing is not supported.
             </p>
           </details>
           <details>
@@ -87,6 +73,27 @@ export default function Page() {
             </p>
           </details>
         </div>
+        <h2>Personalize your workspace</h2>
+        <p>
+          Open{" "}
+          <Link className="underline" href="/settings">
+            Workspace settings
+          </Link>{" "}
+          to choose from eight workspace colour themes, then pick light, dark or system display
+          mode. High contrast and colourful headers are optional. Save appearance to sync your
+          choice to your account.
+        </p>
+        <p>
+          For password changes, open{" "}
+          <Link className="underline" href="/profile/settings">
+            Account security
+          </Link>
+          . For storage and data handling, read{" "}
+          <Link className="underline" href="/privacy">
+            Our privacy approach
+          </Link>
+          .
+        </p>
         <h2>Need a starting point?</h2>
         <p>
           <Link className="text-[var(--primary)] underline" href="/tools">

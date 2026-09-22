@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { api, type SessionUser } from "@/lib/api";
 import { usePreferences } from "@/stores/preferences";
-import { accents, accentLabels, type Appearance } from "@/config/appearance";
+import { accents, accentLabels, type Accent, type Appearance } from "@/config/appearance";
 import { Button } from "@/components/ui/button";
 export function Settings() {
   const preferences = usePreferences();
@@ -52,8 +52,25 @@ export function Settings() {
         <section className="panel form-stack">
           <h2 className="text-lg">Appearance</h2>
           <label className="field">
-            Color theme
+            Workspace colour theme
             <select
+              value={preferences.accent}
+              onChange={(e) => preferences.setAppearance({ accent: e.target.value as Accent })}
+            >
+              {accents.map((accent) => (
+                <option key={accent} value={accent}>
+                  {accentLabels[accent]}
+                </option>
+              ))}
+            </select>
+          </label>
+          <p className="muted text-xs">
+            Choose a full workspace palette, then choose its light or dark display mode below.
+          </p>
+          <label className="field">
+            Display mode
+            <select
+              aria-label="Display mode"
               value={preferences.theme}
               onChange={(e) =>
                 preferences.setAppearance({ theme: e.target.value as Appearance["theme"] })
@@ -65,7 +82,7 @@ export function Settings() {
             </select>
           </label>
           <fieldset className="appearance-colors">
-            <legend>Accent color</legend>
+            <legend>Colour theme previews</legend>
             <div className="color-options">
               {accents.map((accent) => (
                 <button
@@ -100,7 +117,9 @@ export function Settings() {
           </label>
           <div className="appearance-preview">
             <strong>Live preview</strong>
-            <p>Your accent applies to navigation, buttons and highlights.</p>
+            <p>
+              Your colour theme applies to the background, sidebar, panels, navigation and buttons.
+            </p>
             <Button type="button" disabled={busy} onClick={() => void save()}>
               Save appearance
             </Button>

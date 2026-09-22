@@ -119,13 +119,13 @@ test("all eight accents preview, save to the account and expose only owned recor
   });
   try {
     await page.goto("/settings");
-    await page.getByRole("combobox", { name: "Color theme", exact: true }).selectOption("light");
+    await page.getByRole("combobox", { name: "Display mode", exact: true }).selectOption("light");
     for (const name of ["Emerald", "Blue", "Purple", "Rose", "Red", "Orange", "Teal", "Gray"]) {
       await page.getByRole("button", { name: `${name} accent`, exact: true }).click();
       await expect(page.locator("html")).toHaveAttribute("data-accent", name.toLowerCase());
     }
     await page.getByRole("button", { name: "Purple accent", exact: true }).click();
-    await page.getByRole("combobox", { name: "Color theme", exact: true }).selectOption("dark");
+    await page.getByRole("combobox", { name: "Display mode", exact: true }).selectOption("dark");
     await page.getByLabel("High contrast", { exact: true }).check();
     await page.getByLabel("Colorful header and buttons", { exact: true }).check();
     await page.getByRole("button", { name: "Save appearance", exact: true }).click();

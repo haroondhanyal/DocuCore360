@@ -189,7 +189,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
             <ShieldCheck size={22} />
             <strong>Your files. Your control.</strong>
             <p>Core PDF tools run right in your browser.</p>
-            <Link href="/help">
+            <Link href="/privacy">
               Our privacy approach <ArrowUpRight size={14} />
             </Link>
           </div>
@@ -265,9 +265,12 @@ export function Shell({ children }: { children: React.ReactNode }) {
         <footer className="footer">
           <span>© {new Date().getFullYear()} DocuCore 360</span>
           <span>A little less paperwork. A lot more possibility.</span>
-          <Link href="/help">
-            Privacy & help <ArrowUpRight size={12} />
-          </Link>
+          <div className="flex gap-4">
+            <Link href="/privacy">Privacy approach</Link>
+            <Link href="/help">
+              Help &amp; resources <ArrowUpRight size={12} />
+            </Link>
+          </div>
         </footer>
       </div>
     </div>
