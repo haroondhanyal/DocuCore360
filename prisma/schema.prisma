@@ -1,0 +1,195 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "postgresql"
+}
+enum Role {
+  USER
+  ADMIN
+}
+enum Plan {
+  FREE
+  PRO
+  BUSINESS
+}
+enum JobStatus {
+  QUEUED
+  PROCESSING
+  COMPLETED
+  FAILED
+  CANCELLED
+}
+enum TokenPurpose {
+  RESET_PASSWORD
+  VERIFY_EMAIL
+}
+model User {
+  id String @id @default(uuid()) @db.Uuid
+  email String @unique
+  name String
+  phone String?
+  bio String?
+  location String?
+  jobTitle String?
+  avatarPath String?
+  avatarUpdatedAt DateTime?
+  passwordHash String
+  role Role @default(USER)
+  disabled Boolean @default(false)
+  emailVerifiedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  sessions AccountSession[]
+  tokens AuthToken[]
+  files FileAsset[]
+  folders Folder[]
+  jobs ProcessingJob[]
+  history ToolHistory[]
+  favorites FavoriteTool[]
+  preference UserPreference?
+  subscription Subscription?
+  drafts EditorDraft[]
+  audits AuditLog[]
+}
+model AccountSession {
+  id String @id @default(uuid()) @db.Uuid
+  tokenHash String @unique
+  userId String @db.Uuid
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  @@index([userId])
+  @@index([expiresAt])
+}
+model AuthToken {
+  id String @id @default(uuid()) @db.Uuid
+  tokenHash String @unique
+  purpose TokenPurpose
+  userId String @db.Uuid
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  @@index([userId])
+}
+model FileAsset {
+  id String @id @default(uuid()) @db.Uuid
+  userId String? @db.Uuid
+  user User? @relation(fields: [userId], references: [id], onDelete: Cascade)
+  folderId String? @db.Uuid
+  folder Folder? @relation(fields: [folderId], references: [id], onDelete: SetNull)
+  favorite Boolean @default(false)
+  versions FileVersion[]
+  originalName String
+  displayName String
+  extension String
+  mimeType String
+  fileSize Int
+  storagePath String @unique
+  pageCount Int?
+  width Int?
+  height Int?
+  isTemporary Boolean @default(true)
+  expiresAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  @@index([userId, createdAt])
+  @@index([isTemporary, expiresAt])
+}
+model Folder {
+  id String @id @default(uuid()) @db.Uuid
+  userId String @db.Uuid
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name String
+  parentId String? @db.Uuid
+  parent Folder? @relation("FolderTree", fields:[parentId], references:[id], onDelete:SetNull)
+  children Folder[] @relation("FolderTree")
+  files FileAsset[]
+  createdAt DateTime @default(now())
+  @@unique([userId, name])
+}
+model ProcessingJob {
+  id String @id @default(uuid()) @db.Uuid
+  userId String? @db.Uuid
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+  tool String
+  status JobStatus @default(QUEUED)
+  progress Int @default(0)
+  inputMetadata Json?
+  outputMetadata Json?
+  errorMessage String?
+  startedAt DateTime?
+  completedAt DateTime?
+  createdAt DateTime @default(now())
+  @@index([userId, createdAt])
+  @@index([status])
+}
+model ToolHistory {
+  id String @id @default(uuid()) @db.Uuid
+  userId String @db.Uuid
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tool String
+  inputName String
+  outputName String?
+  durationMs Int
+  success Boolean
+  createdAt DateTime @default(now())
+  @@index([userId, createdAt])
+}
+model FavoriteTool {
+  id String @id @default(uuid()) @db.Uuid
+  userId String @db.Uuid
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  toolId String
+  @@unique([userId, toolId])
+}
+model UserPreference {
+  userId String @id @db.Uuid
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  theme String @default("system")
+  autosave Boolean @default(false)
+}
+model Subscription {
+  id String @id @default(uuid()) @db.Uuid
+  userId String @unique @db.Uuid
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  plan Plan @default(FREE)
+  createdAt DateTime @default(now())
+}
+model AuditLog {
+  id String @id @default(uuid()) @db.Uuid
+  userId String? @db.Uuid
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action String
+  createdAt DateTime @default(now())
+  @@index([userId, createdAt])
+}
+
+model FileVersion {
+ id String @id @default(uuid()) @db.Uuid
+ fileId String @db.Uuid
+ file FileAsset @relation(fields: [fileId], references: [id], onDelete: Cascade)
+ storagePath String @unique
+ fileSize Int
+ label String
+ createdAt DateTime @default(now())
+ @@index([fileId, createdAt])
+}
+
+model EditorDraft {
+ id String @id @default(uuid()) @db.Uuid
+ userId String @db.Uuid
+ user User @relation(fields:[userId],references:[id],onDelete:Cascade)
+ name String
+ storagePath String @unique
+ fileSize Int
+ revision Int @default(1)
+ createdAt DateTime @default(now())
+ updatedAt DateTime @updatedAt
+ @@index([userId,updatedAt])
+}
+model RateLimitBucket {
+ key String @id
+ count Int
+ expiresAt DateTime
+ @@index([expiresAt])
+}

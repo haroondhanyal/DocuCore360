@@ -1,0 +1,14 @@
+node_modules
+.next
+.local-postgres
+public/pdfjs
+storage
+package-lock.json
+playwright-report
+test-results
+coverage
+next-env.d.ts
+
+public/ocr
+
+public/security/

@@ -1,0 +1,16 @@
+# Development only: captures mail locally and does not relay to real recipients.
+services:
+  mailpit:
+    image: axllent/mailpit:v1.27.4
+    container_name: docucore360-mailpit
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:1025:1025"
+      - "127.0.0.1:8025:8025"
+    environment:
+      MP_DATABASE: /data/mailpit.db
+      MP_MAX_MESSAGES: 1000
+    volumes:
+      - inbox:/data
+volumes:
+  inbox:

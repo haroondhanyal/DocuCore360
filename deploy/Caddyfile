@@ -1,0 +1,12 @@
+{$DOMAIN} {
+  encode zstd gzip
+  request_body {
+    max_size 42MB
+  }
+  header Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  reverse_proxy app:3000 {
+    transport http {
+      response_header_timeout 90s
+    }
+  }
+}

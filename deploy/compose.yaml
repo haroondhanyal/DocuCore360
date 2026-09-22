@@ -1,0 +1,63 @@
+services:
+  database:
+    image: postgres:16-bookworm
+    environment:
+      POSTGRES_DB: docucore360
+      POSTGRES_USER: docucore
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set a strong database password}
+    volumes:
+      - database:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U docucore -d docucore360"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+  migrate:
+    build: ..
+    env_file: ${APP_ENV_FILE:-.env}
+    environment:
+      DATABASE_URL: postgresql://docucore:${POSTGRES_PASSWORD}@database:5432/docucore360
+    command: ["npx", "prisma", "migrate", "deploy"]
+    depends_on:
+      database: {condition: service_healthy}
+  app:
+    build: ..
+    env_file: ${APP_ENV_FILE:-.env}
+    environment:
+      DATABASE_URL: postgresql://docucore:${POSTGRES_PASSWORD}@database:5432/docucore360
+      STORAGE_ROOT: /app/storage
+      NODE_ENV: production
+    volumes:
+      - storage:/app/storage
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    restart: unless-stopped
+  scheduler:
+    build: ..
+    env_file: ${APP_ENV_FILE:-.env}
+    environment:
+      DATABASE_URL: postgresql://docucore:${POSTGRES_PASSWORD}@database:5432/docucore360
+      STORAGE_ROOT: /app/storage
+    command: ["npm", "run", "storage:schedule"]
+    volumes:
+      - storage:/app/storage
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    restart: unless-stopped
+  proxy:
+    image: caddy:2
+    environment:
+      DOMAIN: ${DOMAIN:?Set your production hostname}
+    ports: ["80:80", "443:443"]
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on: [app]
+    restart: unless-stopped
+volumes:
+  database:
+  storage:
+  caddy_data:
+  caddy_config:
