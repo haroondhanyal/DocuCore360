@@ -28,7 +28,7 @@ test("profile updates persist, avatars stay private, and email changes revoke se
     await expect(page.getByRole("heading", { name: "Your profile", exact: true })).toBeVisible();
     await page.getByLabel("Full name").fill("Updated Person");
     await page.getByLabel("Contact number").fill("+92 300 1234567");
-    await page.getByLabel("Job title").fill("Designer");
+    await page.getByRole("textbox", { name: "Job title", exact: true }).fill("Designer");
     await page.getByLabel("Location").fill("Karachi, Pakistan");
     await page.getByLabel("About you").fill("I design useful documents.");
     await page.getByRole("button", { name: "Save profile", exact: true }).click();

@@ -6,6 +6,8 @@ import { tokenHash } from "@/lib/security/password";
 export const publicUser = {
   id: true,
   name: true,
+  username: true,
+  sidebarLabel: true,
   email: true,
   role: true,
   phone: true,
@@ -15,7 +17,9 @@ export const publicUser = {
   avatarUpdatedAt: true,
   disabled: true,
   emailVerifiedAt: true,
-  preference: { select: { theme: true, accent: true, contrast: true, colorfulHeader: true } },
+  preference: {
+    select: { theme: true, accent: true, buttonColor: true, contrast: true, colorfulHeader: true },
+  },
 } as const;
 export async function currentUser() {
   const token = (await cookies()).get("docucore-session")?.value;

@@ -46,9 +46,9 @@ The application includes **29 working tool routes**, a personal file library, ac
 
 Open the account card at the top of the sidebar to view your name and photo, edit your profile, open settings or sign out.
 
-Your private profile includes your name, email, contact number, job title, location and bio. Use the pencil and delete icons directly on your photo to replace or remove a JPG, PNG or WebP avatar; the app creates a square avatar and updates the sidebar and header. Email changes require your current password, revoke existing sessions and clear verification until the new address is verified.
+Your private profile includes your name, unique @username, email, contact number, job title, location and bio. New accounts receive a generated handle, and existing accounts receive unique handles during migration. Edit your handle in Profile using 3–48 lowercase letters, digits or underscores; duplicate handles are rejected. **Show below your name** chooses username, bio, job title or account role for the sidebar. Empty bio/title falls back to the handle; displaying a role does not change permissions. Use the pencil and delete icons directly on your photo to replace or remove a JPG, PNG or WebP avatar; the app creates a square avatar and updates the sidebar and header. Email changes require your current password, revoke existing sessions and clear verification until the new address is verified.
 
-Workspace **Settings** (`/settings`) has a **Workspace colour theme** dropdown and a separate **Display mode** selector for light, dark and system modes. Eight full workspace palettes colour the background, sidebar, panels and controls: Emerald, Blue, Purple, Rose, Red, Orange, Teal and Gray. High contrast and colourful header/buttons are independent options. Changes preview immediately and persist in this browser; **Save appearance** also saves them to your signed-in account for another browser or device.
+Workspace **Settings** (`/settings`) has a simple **Display mode → Workspace colour theme → Button colour** flow. Display modes are System, Light, Dark, Dim, Midnight black and Sepia. Eight full workspace palettes colour the background, sidebar, panels and controls: Emerald, Blue, Purple, Rose, Red, Orange, Teal and Gray. Button colour can match the workspace or use a custom colour picker, with automatic black/white button text for readability. High contrast and colourful header/buttons are independent options. Changes preview immediately and persist in this browser; **Save appearance** also saves them to your signed-in account for another browser or device.
 
 Personal **Account settings** (`/profile/settings`) is available from the sidebar profile menu and profile page. Change your password there; a successful change ends existing sessions and asks you to sign in again. Every password input—including login, signup, reset, account confirmation and protected PDF tools—has an accessible show/hide eye button.
 
@@ -300,7 +300,7 @@ LOCAL_MAIL_TEST=1 npm run test:e2e
 
 On PowerShell, set `$env:LOCAL_MAIL_TEST="1"` before running the test command. Use a dedicated test database: these suites create and delete synthetic accounts and files.
 
-**Recorded local verification (22 September 2026):** 55 unit/database tests and all 36 Chromium scenarios passed, along with lint, TypeScript and the production build. A WebKit PDF merge smoke test also passed in prior verification. Firefox verification remains incomplete because of a browser-profile startup issue; a full cross-browser pass is not claimed.
+**Recorded local verification (22 September 2026):** 55 unit/database tests and all 37 Chromium scenarios passed, along with lint, TypeScript and the production build. A WebKit PDF merge smoke test also passed in prior verification. Firefox verification remains incomplete because of a browser-profile startup issue; a full cross-browser pass is not claimed.
 
 ## Deployment and backups
 

@@ -4,7 +4,6 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 type State = Appearance & {
   favorites: string[];
-  theme: "light" | "dark" | "system";
   setAppearance: (values: Partial<Appearance>) => void;
   toggleFavorite: (id: string) => void;
   setTheme: (theme: State["theme"]) => void;
@@ -15,6 +14,7 @@ export const usePreferences = create<State>()(
       favorites: [],
       theme: "system",
       accent: "emerald",
+      buttonColor: "theme",
       contrast: false,
       colorfulHeader: false,
       setAppearance: (values) => set(values),

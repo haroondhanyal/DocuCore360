@@ -121,10 +121,14 @@ test("all eight accents preview, save to the account and expose only owned recor
     await page.goto("/settings");
     await page.getByRole("combobox", { name: "Display mode", exact: true }).selectOption("light");
     for (const name of ["Emerald", "Blue", "Purple", "Rose", "Red", "Orange", "Teal", "Gray"]) {
-      await page.getByRole("button", { name: `${name} accent`, exact: true }).click();
+      await page
+        .getByRole("combobox", { name: "Workspace colour theme", exact: true })
+        .selectOption(name.toLowerCase());
       await expect(page.locator("html")).toHaveAttribute("data-accent", name.toLowerCase());
     }
-    await page.getByRole("button", { name: "Purple accent", exact: true }).click();
+    await page
+      .getByRole("combobox", { name: "Workspace colour theme", exact: true })
+      .selectOption("purple");
     await page.getByRole("combobox", { name: "Display mode", exact: true }).selectOption("dark");
     await page.getByLabel("High contrast", { exact: true }).check();
     await page.getByLabel("Colorful header and buttons", { exact: true }).check();
@@ -183,5 +187,97 @@ test("all eight accents preview, save to the account and expose only owned recor
     ).toBe(true);
   } finally {
     await page.request.delete("/api/account", { headers: origin, data: { password } });
+  }
+});
+
+test("unique handles, sidebar identity and custom button colours persist", async ({
+  page,
+  browser,
+}) => {
+  const password = "identity-password-2026";
+  const email = `identity-${crypto.randomUUID()}@example.test`;
+  const other = await browser.newContext();
+  const handle = `raja_${crypto.randomUUID().replaceAll("-", "").slice(0, 12)}`;
+  try {
+    expect(
+      (
+        await page.request.post("/api/auth/register", {
+          headers: origin,
+          data: { email, password, name: "Raja Haroon" },
+        })
+      ).ok(),
+    ).toBe(true);
+    expect(
+      (
+        await other.request.post("http://localhost:3000/api/auth/register", {
+          headers: origin,
+          data: { email: `other-${email}`, password, name: "Raja Haroon" },
+        })
+      ).ok(),
+    ).toBe(true);
+    const first = (await (await page.request.get("/api/auth/session")).json()).user;
+    const second = (
+      await (await other.request.get("http://localhost:3000/api/auth/session")).json()
+    ).user;
+    expect(first.username).not.toBe(second.username);
+    await page.goto("/profile");
+    await page.getByRole("textbox", { name: /^Username/ }).fill(handle);
+    await page.getByRole("textbox", { name: /^About you/ }).fill("I create documents");
+    await page.getByRole("combobox", { name: "Show below your name" }).selectOption("bio");
+    await page.getByRole("button", { name: "Save profile", exact: true }).click();
+    await expect(page.locator(".workspace-identity small")).toHaveText("I create documents");
+    await page.reload();
+    await expect(page.getByRole("textbox", { name: /^Username/ })).toHaveValue(handle);
+    expect(
+      (
+        await other.request.patch("http://localhost:3000/api/account", {
+          headers: origin,
+          data: { username: handle.toUpperCase() },
+        })
+      ).status(),
+    ).toBe(409);
+    expect(
+      (
+        await page.request.patch("/api/account", {
+          headers: origin,
+          data: { username: "bad handle" },
+        })
+      ).status(),
+    ).toBe(400);
+    await page.getByRole("combobox", { name: "Show below your name" }).selectOption("role");
+    await page.getByRole("button", { name: "Save profile", exact: true }).click();
+    await expect(page.locator(".workspace-identity small")).toHaveText("Member");
+    expect((await (await page.request.get("/api/auth/session")).json()).user.role).toBe("USER");
+    await page.goto("/settings");
+    for (const mode of ["system", "light", "dark", "dim", "oled", "sepia"]) {
+      await page.getByRole("combobox", { name: "Display mode", exact: true }).selectOption(mode);
+      await expect(page.locator("html")).toHaveAttribute("data-display", mode);
+    }
+    await page.getByRole("combobox", { name: "Button colour", exact: true }).selectOption("custom");
+    await page.getByLabel("Choose button colour", { exact: true }).fill("#ffcc00");
+    await expect(page.getByRole("button", { name: "Save appearance" })).toHaveCSS(
+      "background-color",
+      "rgb(255, 204, 0)",
+    );
+    await expect(page.getByRole("button", { name: "Save appearance" })).toHaveCSS(
+      "color",
+      "rgb(0, 0, 0)",
+    );
+    await page.getByRole("button", { name: "Save appearance" }).click();
+    await expect(page.getByRole("status")).toContainText("saved to your account");
+    const saved = (await (await page.request.get("/api/auth/session")).json()).user.preference;
+    expect(saved.buttonColor).toBe("#ffcc00");
+    expect(saved.theme).toBe("sepia");
+    await page.reload();
+    await expect(page.getByLabel("Choose button colour", { exact: true })).toHaveValue("#ffcc00");
+    await page.getByRole("combobox", { name: "Button colour", exact: true }).selectOption("theme");
+    await expect(page.locator("html")).not.toHaveClass(/custom-buttons/);
+  } finally {
+    await page.request.delete("/api/account", { headers: origin, data: { password } });
+    await other.request.delete("http://localhost:3000/api/account", {
+      headers: origin,
+      data: { password },
+    });
+    await other.close();
   }
 });

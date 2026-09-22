@@ -14,6 +14,8 @@ export async function api<T>(url: string, options?: RequestInit): Promise<T> {
 export type SessionUser = {
   id: string;
   name: string;
+  username: string;
+  sidebarLabel: "username" | "bio" | "jobTitle" | "role";
   email: string;
   role: "USER" | "ADMIN";
   phone?: string | null;

@@ -169,6 +169,36 @@ export function Profile() {
                     maxLength={80}
                   />
                 </label>
+                <label className="field">
+                  Username
+                  <input
+                    name="username"
+                    defaultValue={user.username}
+                    required
+                    minLength={3}
+                    maxLength={48}
+                    pattern="[a-z0-9_]{3,48}"
+                    autoCapitalize="none"
+                    autoComplete="username"
+                    spellCheck={false}
+                  />
+                  <small>
+                    Your unique @username. Use lowercase letters, numbers or underscores; no spaces.
+                  </small>
+                </label>
+                <label className="field">
+                  Show below your name
+                  <select name="sidebarLabel" defaultValue={user.sidebarLabel}>
+                    <option value="username">Username (@handle)</option>
+                    <option value="bio">Bio</option>
+                    <option value="jobTitle">Job title</option>
+                    <option value="role">Account role</option>
+                  </select>
+                  <small>
+                    Empty bio or title falls back to your username. Account role is managed by an
+                    administrator.
+                  </small>
+                </label>
                 <div className="profile-fields">
                   <label className="field">
                     Email address

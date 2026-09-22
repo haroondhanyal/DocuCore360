@@ -20,6 +20,17 @@ export async function PATCH(request: Request) {
           .max(254)
           .transform((v) => v.toLowerCase().trim())
           .optional(),
+        username: z
+          .string()
+          .trim()
+          .toLowerCase()
+          .regex(/^[a-z0-9_]{3,48}$/, "Use 3–48 letters, numbers or underscores, without @.")
+          .optional(),
+        sidebarLabel: z.enum(["username", "bio", "jobTitle", "role"]).optional(),
+        buttonColor: z
+          .string()
+          .regex(/^(theme|#[0-9a-fA-F]{6})$/)
+          .optional(),
         phone: z
           .string()
           .trim()
@@ -32,7 +43,7 @@ export async function PATCH(request: Request) {
         name: z.string().trim().min(2).max(80).optional(),
         currentPassword: z.string().max(128).optional(),
         newPassword: z.string().min(10).max(128).optional(),
-        theme: z.enum(["light", "dark", "system"]).optional(),
+        theme: z.enum(["light", "dark", "system", "dim", "oled", "sepia"]).optional(),
         accent: z.enum(accents).optional(),
         contrast: z.boolean().optional(),
         colorfulHeader: z.boolean().optional(),
@@ -51,6 +62,8 @@ export async function PATCH(request: Request) {
       await tx.user.update({
         where: { id: user.id },
         data: {
+          ...(input.username ? { username: input.username } : {}),
+          ...(input.sidebarLabel ? { sidebarLabel: input.sidebarLabel } : {}),
           ...(input.name ? { name: input.name } : {}),
           ...(emailChanged ? { email: input.email, emailVerifiedAt: null } : {}),
           ...(input.phone !== undefined ? { phone: input.phone || null } : {}),
@@ -63,6 +76,7 @@ export async function PATCH(request: Request) {
       const appearance = {
         theme: input.theme,
         accent: input.accent,
+        buttonColor: input.buttonColor,
         contrast: input.contrast,
         colorfulHeader: input.colorfulHeader,
       };
@@ -89,7 +103,7 @@ export async function PATCH(request: Request) {
     });
   } catch (error) {
     if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2002")
-      return apiError(new HttpError(409, "That email address is already in use."));
+      return apiError(new HttpError(409, "That email address or username is already in use."));
     return apiError(error);
   }
 }

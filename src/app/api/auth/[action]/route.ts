@@ -59,6 +59,12 @@ export async function POST(request: Request, context: Context) {
           data: {
             email: input.email,
             name: input.name,
+            username: `${
+              input.name
+                .toLowerCase()
+                .replace(/[^a-z0-9]/g, "")
+                .slice(0, 24) || "user"
+            }_${randomBytes(6).toString("hex")}`,
             passwordHash: await hashPassword(input.password),
             preference: { create: {} },
             subscription: { create: {} },
@@ -74,7 +80,13 @@ export async function POST(request: Request, context: Context) {
         data: { userId: user.id, action: action === "register" ? "ACCOUNT_CREATE" : "LOGIN" },
       });
       return NextResponse.json({
-        user: { id: user.id, name: user.name, email: user.email, role: user.role },
+        user: {
+          id: user.id,
+          name: user.name,
+          username: user.username,
+          email: user.email,
+          role: user.role,
+        },
       });
     }
     if (action === "forgot-password" || action === "send-verification") {

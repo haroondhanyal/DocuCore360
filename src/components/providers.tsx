@@ -45,6 +45,19 @@ function FavoriteSync() {
 function Theme() {
   const theme = usePreferences((s) => s.theme);
   const accent = usePreferences((s) => s.accent);
+  const buttonColor = usePreferences((s) => s.buttonColor);
+  useEffect(() => {
+    const root = document.documentElement;
+    const custom = /^#[0-9a-f]{6}$/i.test(buttonColor);
+    root.classList.toggle("custom-buttons", custom);
+    if (!custom) return;
+    const rgb = [1, 3, 5]
+      .map((i) => parseInt(buttonColor.slice(i, i + 2), 16) / 255)
+      .map((v) => (v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4));
+    const luminance = rgb[0] * 0.2126 + rgb[1] * 0.7152 + rgb[2] * 0.0722;
+    root.style.setProperty("--custom-button", buttonColor);
+    root.style.setProperty("--custom-button-text", luminance > 0.179 ? "#000" : "#fff");
+  }, [buttonColor]);
   const contrast = usePreferences((s) => s.contrast);
   const colorfulHeader = usePreferences((s) => s.colorfulHeader);
   useEffect(() => {
@@ -55,11 +68,13 @@ function Theme() {
   }, [accent, contrast, colorfulHeader]);
   useEffect(() => {
     const media = window.matchMedia("(prefers-color-scheme: dark)");
-    const apply = () =>
+    const apply = () => {
+      document.documentElement.dataset.display = theme;
       document.documentElement.classList.toggle(
         "dark",
-        theme === "dark" || (theme === "system" && media.matches),
+        ["dark", "dim", "oled"].includes(theme) || (theme === "system" && media.matches),
       );
+    };
     apply();
     media.addEventListener("change", apply);
     return () => media.removeEventListener("change", apply);

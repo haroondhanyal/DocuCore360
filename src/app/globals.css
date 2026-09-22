@@ -1987,3 +1987,33 @@ small {
   --sidebar: color-mix(in srgb, var(--primary) 20%, #080b10);
   --line: color-mix(in srgb, var(--primary) 30%, #080b10);
 }
+.custom-buttons .btn-primary,
+.custom-buttons.colorful-header .topbar .btn-secondary {
+  background: var(--custom-button);
+  color: var(--custom-button-text);
+}
+.workspace-identity small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+:root[data-display="dim"]:not(.high-contrast) {
+  --bg: color-mix(in srgb, var(--primary) 13%, #222630);
+  --surface: color-mix(in srgb, var(--primary) 15%, #2b303b);
+  --sidebar: color-mix(in srgb, var(--primary) 18%, #222630);
+}
+:root[data-display="oled"]:not(.high-contrast) {
+  --bg: #000;
+  --surface: #080808;
+  --sidebar: #000;
+}
+:root[data-display="sepia"]:not(.high-contrast) {
+  --bg: #f3e9d5;
+  --surface: #fff8e9;
+  --sidebar: #eaddc3;
+  --text: #382d20;
+  --muted: #615442;
+  --line: #c5b497;
+}

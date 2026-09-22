@@ -25,6 +25,8 @@ enum TokenPurpose {
   VERIFY_EMAIL
 }
 model User {
+  username String @unique @default(dbgenerated("('user_'::text || replace((gen_random_uuid())::text, '-'::text, ''::text))"))
+  sidebarLabel String @default("username")
   id String @id @default(uuid()) @db.Uuid
   email String @unique
   name String
@@ -143,6 +145,7 @@ model FavoriteTool {
   @@unique([userId, toolId])
 }
 model UserPreference {
+  buttonColor String @default("theme")
   userId String @id @db.Uuid
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   theme String @default("system")

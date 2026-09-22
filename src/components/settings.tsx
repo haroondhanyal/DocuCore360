@@ -20,12 +20,12 @@ export function Settings() {
     setBusy(true);
     setError("");
     setStatus("");
-    const { theme, accent, contrast, colorfulHeader } = preferences;
+    const { theme, accent, buttonColor, contrast, colorfulHeader } = preferences;
     try {
       if (session.data?.user) {
         await api("/api/account", {
           method: "PATCH",
-          body: JSON.stringify({ theme, accent, contrast, colorfulHeader }),
+          body: JSON.stringify({ theme, accent, buttonColor, contrast, colorfulHeader }),
         });
         await client.invalidateQueries({ queryKey: ["session"] });
       }
@@ -51,6 +51,24 @@ export function Settings() {
       <div className="settings-layout">
         <section className="panel form-stack">
           <h2 className="text-lg">Appearance</h2>
+          <p className="muted text-xs">1. Display mode · 2. Workspace colour · 3. Button colour</p>
+          <label className="field">
+            Display mode
+            <select
+              aria-label="Display mode"
+              value={preferences.theme}
+              onChange={(e) =>
+                preferences.setAppearance({ theme: e.target.value as Appearance["theme"] })
+              }
+            >
+              <option value="system">System</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+              <option value="dim">Dim</option>
+              <option value="oled">Midnight black</option>
+              <option value="sepia">Sepia</option>
+            </select>
+          </label>
           <label className="field">
             Workspace colour theme
             <select
@@ -64,41 +82,30 @@ export function Settings() {
               ))}
             </select>
           </label>
-          <p className="muted text-xs">
-            Choose a full workspace palette, then choose its light or dark display mode below.
-          </p>
           <label className="field">
-            Display mode
+            Button colour
             <select
-              aria-label="Display mode"
-              value={preferences.theme}
+              value={preferences.buttonColor === "theme" ? "theme" : "custom"}
               onChange={(e) =>
-                preferences.setAppearance({ theme: e.target.value as Appearance["theme"] })
+                preferences.setAppearance({
+                  buttonColor: e.target.value === "theme" ? "theme" : "#167967",
+                })
               }
             >
-              <option value="system">System</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
+              <option value="theme">Match workspace</option>
+              <option value="custom">Custom colour</option>
             </select>
           </label>
-          <fieldset className="appearance-colors">
-            <legend>Colour theme previews</legend>
-            <div className="color-options">
-              {accents.map((accent) => (
-                <button
-                  key={accent}
-                  type="button"
-                  data-color={accent}
-                  aria-label={`${accentLabels[accent]} accent`}
-                  aria-pressed={preferences.accent === accent}
-                  onClick={() => preferences.setAppearance({ accent })}
-                >
-                  <span className="color-dot" aria-hidden="true" />
-                  {accentLabels[accent]}
-                </button>
-              ))}
-            </div>
-          </fieldset>
+          {preferences.buttonColor !== "theme" && (
+            <label className="field">
+              Choose button colour
+              <input
+                type="color"
+                value={preferences.buttonColor}
+                onChange={(e) => preferences.setAppearance({ buttonColor: e.target.value })}
+              />
+            </label>
+          )}
           <label className="check-label">
             <input
               type="checkbox"
@@ -150,9 +157,10 @@ export function Settings() {
             </Button>
           </section>
           <section className="panel form-stack">
-            <h2 className="text-lg">Personal workspace</h2>
+            <h2 className="text-lg">Your profile &amp; identity</h2>
             <p className="muted">
-              Edit your photo and contact details, or manage your password in account settings.
+              Choose your @username and what appears below your name: username, bio, job title or
+              account role. You can also edit your photo and contact details.
             </p>
             <Button asChild variant="secondary">
               <Link href="/profile">Edit your profile</Link>

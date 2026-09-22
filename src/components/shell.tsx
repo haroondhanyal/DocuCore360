@@ -118,7 +118,21 @@ export function Shell({ children }: { children: React.ReactNode }) {
               <ProfileAvatar user={data.user} />
               <span className="workspace-identity">
                 <strong>{data.user.name}</strong>
-                <small>Personal workspace</small>
+                <small
+                  title={
+                    data.user.sidebarLabel === "bio" ? (data.user.bio ?? undefined) : undefined
+                  }
+                >
+                  {data.user.sidebarLabel === "role"
+                    ? data.user.role === "ADMIN"
+                      ? "Administrator"
+                      : "Member"
+                    : data.user.sidebarLabel === "bio" && data.user.bio
+                      ? data.user.bio
+                      : data.user.sidebarLabel === "jobTitle" && data.user.jobTitle
+                        ? data.user.jobTitle
+                        : `@${data.user.username}`}
+                </small>
               </span>
               <ChevronRight size={14} />
             </summary>

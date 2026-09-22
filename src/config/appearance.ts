@@ -20,8 +20,9 @@ export const accentLabels: Record<Accent, string> = {
   gray: "Gray",
 };
 export type Appearance = {
-  theme: "light" | "dark" | "system";
+  theme: "light" | "dark" | "system" | "dim" | "oled" | "sepia";
   accent: Accent;
+  buttonColor: string;
   contrast: boolean;
   colorfulHeader: boolean;
 };
