@@ -28,7 +28,14 @@ type Asset = {
   pageCount: number | null;
   createdAt: string;
 };
-export function FilesWorkspace({ recent = false }: { recent?: boolean }) {
+export function FilesWorkspace({
+  recent = false,
+  embedded = false,
+}: {
+  recent?: boolean;
+  embedded?: boolean;
+}) {
+  const Heading = embedded ? "h2" : "h1";
   const client = useQueryClient();
   const [page, setPage] = useState(1);
   const [folder, setFolder] = useState("all");
@@ -149,7 +156,7 @@ export function FilesWorkspace({ recent = false }: { recent?: boolean }) {
     <>
       <div className="page-intro">
         <div>
-          <h1>{recent ? "Recently saved files" : "My files"}</h1>
+          <Heading>{recent ? "Recently saved files" : "My files"}</Heading>
           <p>Your saved documents, right where you need them.</p>
         </div>
         {session.data?.user && (

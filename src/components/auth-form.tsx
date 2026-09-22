@@ -1,4 +1,5 @@
 "use client";
+import { PasswordInput } from "@/components/ui/password-input";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useQueryClient } from "@tanstack/react-query";
@@ -80,10 +81,10 @@ export function AuthForm({ mode }: { mode: Mode }) {
         {["login", "register", "reset-password"].includes(mode) && (
           <label className="field">
             {mode === "reset-password" ? "New password" : "Password"}
-            <input
+            <PasswordInput
               name="password"
               aria-label={mode === "reset-password" ? "New password" : "Password"}
-              type="password"
+
               autoComplete={mode === "login" ? "current-password" : "new-password"}
               minLength={10}
               maxLength={128}

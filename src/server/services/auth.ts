@@ -15,6 +15,7 @@ export const publicUser = {
   avatarUpdatedAt: true,
   disabled: true,
   emailVerifiedAt: true,
+  preference: { select: { theme: true, accent: true, contrast: true, colorfulHeader: true } },
 } as const;
 export async function currentUser() {
   const token = (await cookies()).get("docucore-session")?.value;

@@ -1699,3 +1699,277 @@ small {
     grid-template-columns: 1fr;
   }
 }
+
+/* Shared password reveal, profile photo actions, and appearance controls. */
+.password-control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+}
+.password-control input {
+  width: 100%;
+  padding-right: 46px !important;
+}
+.password-toggle {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+}
+.password-toggle:hover {
+  background: var(--primary-light);
+}
+.profile-photo-control {
+  position: relative;
+  display: inline-flex;
+  margin-bottom: 10px;
+}
+.photo-actions {
+  position: absolute;
+  display: flex;
+  gap: 5px;
+  right: -10px;
+  bottom: -8px;
+}
+.photo-actions button {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  color: var(--primary);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #0002;
+}
+.settings-layout {
+  max-width: 1050px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.appearance-colors {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.appearance-colors legend {
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.color-options {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+.color-options button {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 5px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 12px;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
+.color-options button[aria-pressed="true"] {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+.color-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--swatch);
+}
+[data-color="emerald"] {
+  --swatch: #167967;
+}
+[data-color="blue"] {
+  --swatch: #1d4ed8;
+}
+[data-color="purple"] {
+  --swatch: #6d28d9;
+}
+[data-color="rose"] {
+  --swatch: #be185d;
+}
+[data-color="red"] {
+  --swatch: #b91c1c;
+}
+[data-color="orange"] {
+  --swatch: #9a3412;
+}
+[data-color="teal"] {
+  --swatch: #0e7490;
+}
+[data-color="gray"] {
+  --swatch: #475569;
+}
+.appearance-preview {
+  background: var(--primary-light);
+  padding: 20px;
+  border-radius: 10px;
+  display: grid;
+  gap: 12px;
+}
+:root {
+  --on-primary: #fff;
+  --button-end: #115e59;
+}
+:root[data-accent="emerald"] {
+  --primary: #167967;
+  --primary-light: #eaf5f0;
+  --button-end: #115e59;
+}
+:root[data-accent="blue"] {
+  --primary: #1d4ed8;
+  --primary-light: #eff6ff;
+  --button-end: #3730a3;
+}
+:root[data-accent="purple"] {
+  --primary: #6d28d9;
+  --primary-light: #f5f3ff;
+  --button-end: #9d174d;
+}
+:root[data-accent="rose"] {
+  --primary: #be185d;
+  --primary-light: #fff1f2;
+  --button-end: #7e22ce;
+}
+:root[data-accent="red"] {
+  --primary: #b91c1c;
+  --primary-light: #fef2f2;
+  --button-end: #9a3412;
+}
+:root[data-accent="orange"] {
+  --primary: #9a3412;
+  --primary-light: #fff7ed;
+  --button-end: #92400e;
+}
+:root[data-accent="teal"] {
+  --primary: #0e7490;
+  --primary-light: #ecfeff;
+  --button-end: #115e59;
+}
+:root[data-accent="gray"] {
+  --primary: #475569;
+  --primary-light: #f1f5f9;
+  --button-end: #1e293b;
+}
+:root.dark {
+  --on-primary: #10191e;
+}
+:root.dark[data-accent="emerald"] {
+  --primary: #79ceb2;
+  --primary-light: #223b32;
+  --button-end: #99f6e4;
+}
+:root.dark[data-accent="blue"] {
+  --primary: #93c5fd;
+  --primary-light: #1e304b;
+  --button-end: #c4b5fd;
+}
+:root.dark[data-accent="purple"] {
+  --primary: #c4b5fd;
+  --primary-light: #34264b;
+  --button-end: #f9a8d4;
+}
+:root.dark[data-accent="rose"] {
+  --primary: #f9a8d4;
+  --primary-light: #442437;
+  --button-end: #c4b5fd;
+}
+:root.dark[data-accent="red"] {
+  --primary: #fca5a5;
+  --primary-light: #442626;
+  --button-end: #fdba74;
+}
+:root.dark[data-accent="orange"] {
+  --primary: #fdba74;
+  --primary-light: #422e20;
+  --button-end: #fde68a;
+}
+:root.dark[data-accent="teal"] {
+  --primary: #67e8f9;
+  --primary-light: #203a40;
+  --button-end: #99f6e4;
+}
+:root.dark[data-accent="gray"] {
+  --primary: #cbd5e1;
+  --primary-light: #2d3644;
+  --button-end: #e2e8f0;
+}
+.btn-primary {
+  color: var(--on-primary);
+}
+.colorful-header .topbar {
+  background: linear-gradient(110deg, var(--primary-light), var(--surface));
+  border-bottom: 2px solid var(--primary);
+}
+.colorful-header .btn-primary {
+  background: linear-gradient(110deg, var(--primary), var(--button-end));
+}
+.colorful-header .topbar .btn-secondary {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+:root.high-contrast {
+  --bg: #fff;
+  --surface: #fff;
+  --sidebar: #fff;
+  --text: #111;
+  --muted: #333;
+  --line: #555;
+}
+:root.dark.high-contrast {
+  --bg: #000;
+  --surface: #000;
+  --sidebar: #000;
+  --text: #fff;
+  --muted: #eee;
+  --line: #bbb;
+  --on-primary: #000;
+}
+.high-contrast :is(input, select, textarea, .panel, .tool-card) {
+  border-color: var(--line);
+}
+@media (max-width: 800px) {
+  .settings-layout {
+    grid-template-columns: 1fr;
+  }
+}
+:root[data-accent="blue"]:not(.dark):not(.high-contrast) {
+  --bg: #f5f8ff;
+}
+:root[data-accent="purple"]:not(.dark):not(.high-contrast) {
+  --bg: #faf7ff;
+}
+:root[data-accent="rose"]:not(.dark):not(.high-contrast) {
+  --bg: #fff7fa;
+}
+:root[data-accent="red"]:not(.dark):not(.high-contrast) {
+  --bg: #fff8f8;
+}
+:root[data-accent="orange"]:not(.dark):not(.high-contrast) {
+  --bg: #fffbf5;
+}
+:root[data-accent="teal"]:not(.dark):not(.high-contrast) {
+  --bg: #f4fcfd;
+}
+:root[data-accent="gray"]:not(.dark):not(.high-contrast) {
+  --bg: #f1f3f5;
+}

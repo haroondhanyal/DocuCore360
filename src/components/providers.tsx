@@ -1,8 +1,26 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
 import { usePreferences } from "@/stores/preferences";
 import { api, type SessionUser } from "@/lib/api";
+function AppearanceSync() {
+  const session = useQuery({
+    queryKey: ["session"],
+    queryFn: () => api<{ user: SessionUser | null }>("/api/auth/session"),
+  });
+  const loaded = useRef<string | null>(null);
+  useEffect(() => {
+    const user = session.data?.user;
+    if (!user) {
+      loaded.current = null;
+      return;
+    }
+    if (loaded.current === user.id) return;
+    loaded.current = user.id;
+    if (user.preference) usePreferences.getState().setAppearance(user.preference);
+  }, [session.data]);
+  return null;
+}
 function FavoriteSync() {
   const session = useQuery({
     queryKey: ["session"],
@@ -26,6 +44,15 @@ function FavoriteSync() {
 }
 function Theme() {
   const theme = usePreferences((s) => s.theme);
+  const accent = usePreferences((s) => s.accent);
+  const contrast = usePreferences((s) => s.contrast);
+  const colorfulHeader = usePreferences((s) => s.colorfulHeader);
+  useEffect(() => {
+    const root = document.documentElement;
+    root.dataset.accent = accent;
+    root.classList.toggle("high-contrast", contrast);
+    root.classList.toggle("colorful-header", colorfulHeader);
+  }, [accent, contrast, colorfulHeader]);
   useEffect(() => {
     const media = window.matchMedia("(prefers-color-scheme: dark)");
     const apply = () =>
@@ -47,6 +74,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <QueryClientProvider client={client}>
       <Theme />
       <FavoriteSync />
+      <AppearanceSync />
       {children}
     </QueryClientProvider>
   );

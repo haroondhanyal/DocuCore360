@@ -28,3 +28,5 @@
 See [release handover](RELEASE_0_4.md) for precise behavior and [implementation status](IMPLEMENTATION_STATUS.md) for verification. Active tools produce actual output bytes; experimental does not mean simulated.
 
 Personal profiles now include private photo upload/removal, name, contact number, bio, job title and location. Email changes require password confirmation and invalidate prior sessions/tokens. Sidebar and header avatars open the account profile.
+
+Workspace appearance includes eight palettes (Emerald, Blue, Purple, Rose, Red, Orange, Teal and Gray), light/dark/system modes, high contrast and optional colourful header/buttons. Preview is browser-local; explicit Save appearance persists to the account. Personal password/deletion settings are at `/profile/settings`; workspace appearance and View all records are at `/settings`. The records view combines existing owned files/versions, latest 200 processing records and account drafts. All password fields have show/hide controls. Photo edit/delete icons sit directly on the profile avatar. Tool category navigation is URL-driven, including browser back/forward.

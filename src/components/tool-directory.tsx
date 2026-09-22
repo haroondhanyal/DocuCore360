@@ -1,32 +1,31 @@
 "use client";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { Search, Star } from "lucide-react";
-import { searchTools } from "@/config/tools";
+import { searchTools, matchesToolCategory, toolCategories } from "@/config/tools";
 import { ToolCard } from "@/components/tool-card";
 import { usePreferences } from "@/stores/preferences";
 export function ToolDirectory({ favoritesOnly = false }: { favoritesOnly?: boolean }) {
   const params = useSearchParams();
   const [query, setQuery] = useState("");
-  const [filter, setFilter] = useState(params.get("category") ?? "All tools");
+  const router = useRouter();
+  const requested = params.get("category");
+  const filter = toolCategories.find((c) => c === requested) ?? "All tools";
   const favorites = usePreferences((s) => s.favorites);
   const result = searchTools(query).filter(
-    (t) =>
-      (!favoritesOnly || favorites.includes(t.id)) &&
-      (filter === "All tools" ||
-        (filter === "PDF"
-          ? t.id.includes("pdf") || t.kind === "reader"
-          : filter === "Image"
-            ? t.category === "Image Tools" || t.id.includes("image")
-            : filter === "Ready to use"
-              ? t.status === "stable"
-              : t.category === filter)),
+    (t) => (!favoritesOnly || favorites.includes(t.id)) && matchesToolCategory(t, filter),
   );
   return (
     <>
       <div className="page-intro">
         <div>
-          <h1>{favoritesOnly ? "Your favorite tools" : "A tool for every document."}</h1>
+          <h1>
+            {favoritesOnly
+              ? "Your favorite tools"
+              : filter === "All tools"
+                ? "All tools"
+                : `${filter} tools`}
+          </h1>
           <p>
             {favoritesOnly
               ? "Your shortcuts, saved on this browser."
@@ -45,25 +44,24 @@ export function ToolDirectory({ favoritesOnly = false }: { favoritesOnly?: boole
         />
       </div>
       <div className="tabs">
-        {[
-          "All tools",
-          "Ready to use",
-          "Organize PDF",
-          "Read & Edit",
-          "Convert",
-          "Image",
-          "Security",
-          "OCR",
-        ].map((c) => (
+        {toolCategories.map((c) => (
           <button
             key={c}
             className={`tab ${filter === c ? "active" : ""}`}
-            onClick={() => setFilter(c)}
+            aria-pressed={filter === c}
+            onClick={() =>
+              router.push(
+                `${favoritesOnly ? "/favorites" : "/tools"}${c === "All tools" ? "" : `?category=${encodeURIComponent(c)}`}`,
+              )
+            }
           >
             {c}
           </button>
         ))}
       </div>
+      <p className="muted text-xs mb-4" role="status">
+        {result.length} tools
+      </p>
       <div className="tool-grid">
         {result.map((t) => (
           <ToolCard key={t.id} tool={t} />

@@ -1,3 +1,4 @@
+import { accents } from "@/config/appearance";
 import { sharedRateLimit } from "@/server/services/shared-rate-limit";
 import { Prisma } from "@prisma/client";
 import { NextResponse } from "next/server";
@@ -32,6 +33,9 @@ export async function PATCH(request: Request) {
         currentPassword: z.string().max(128).optional(),
         newPassword: z.string().min(10).max(128).optional(),
         theme: z.enum(["light", "dark", "system"]).optional(),
+        accent: z.enum(accents).optional(),
+        contrast: z.boolean().optional(),
+        colorfulHeader: z.boolean().optional(),
       })
       .parse(await jsonBody(request));
     const emailChanged = Boolean(input.email && input.email !== user.email);
@@ -56,11 +60,17 @@ export async function PATCH(request: Request) {
           ...(input.newPassword ? { passwordHash: await hashPassword(input.newPassword) } : {}),
         },
       });
-      if (input.theme)
+      const appearance = {
+        theme: input.theme,
+        accent: input.accent,
+        contrast: input.contrast,
+        colorfulHeader: input.colorfulHeader,
+      };
+      if (Object.values(appearance).some((v) => v !== undefined))
         await tx.userPreference.upsert({
           where: { userId: user.id },
-          create: { userId: user.id, theme: input.theme },
-          update: { theme: input.theme },
+          create: { userId: user.id, ...appearance },
+          update: appearance,
         });
       if (input.newPassword || emailChanged) {
         await tx.accountSession.deleteMany({ where: { userId: user.id } });

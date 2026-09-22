@@ -3,7 +3,8 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { api, type SessionUser } from "@/lib/api";
 import { Button } from "@/components/ui/button";
-export function History() {
+export function History({ embedded = false }: { embedded?: boolean }) {
+  const Heading = embedded ? "h2" : "h1";
   const [error, setError] = useState("");
   const client = useQueryClient();
   const session = useQuery({
@@ -30,7 +31,7 @@ export function History() {
     <>
       <div className="page-intro">
         <div>
-          <h1>Processing history</h1>
+          <Heading>Processing history</Heading>
           <p>Signed-in result activity. Document contents are not recorded here.</p>
         </div>
         <Button

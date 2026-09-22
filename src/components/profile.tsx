@@ -1,5 +1,7 @@
 "use client";
-import { useState } from "react";
+import { PasswordInput } from "@/components/ui/password-input";
+import { useState, useRef } from "react";
+import { Pencil, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { api, type SessionUser } from "@/lib/api";
@@ -7,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { ProfileAvatar } from "@/components/profile-avatar";
 import { message } from "@/lib/utils";
 export function Profile() {
+  const photoInput = useRef<HTMLInputElement>(null);
   const client = useQueryClient();
   const session = useQuery({
     queryKey: ["session"],
@@ -47,7 +50,7 @@ export function Profile() {
           <p>A personal touch for your document workspace.</p>
         </div>
         <Button asChild variant="secondary">
-          <Link href="/settings">Account settings</Link>
+          <Link href="/profile/settings">Account settings</Link>
         </Button>
       </div>
       {notice && (
@@ -76,15 +79,41 @@ export function Profile() {
       ) : (
         <div className="profile-layout">
           <section className="panel profile-summary">
-            <ProfileAvatar user={user} large />
+            <div className="profile-photo-control">
+              <ProfileAvatar user={user} large />
+              <div className="photo-actions">
+                <button
+                  type="button"
+                  aria-label="Edit profile photo"
+                  title="Edit profile photo"
+                  disabled={busy}
+                  onClick={() => photoInput.current?.click()}
+                >
+                  <Pencil size={16} />
+                </button>
+                {user.avatarUpdatedAt && (
+                  <button
+                    type="button"
+                    aria-label="Delete profile photo"
+                    title="Delete profile photo"
+                    disabled={busy}
+                    onClick={() => void save("/api/account/avatar", "DELETE")}
+                  >
+                    <Trash2 size={16} />
+                  </button>
+                )}
+              </div>
+            </div>
             <h2>{user.name}</h2>
             <p className="muted profile-email">{user.email}</p>
             <span className="profile-badge">
               {user.emailVerifiedAt ? "Email verified" : "Email not verified"}
             </span>
-            <label className="field mt-5">
+            <label className="sr-only">
               Profile photo
               <input
+                ref={photoInput}
+                tabIndex={-1}
                 aria-label="Upload profile photo"
                 type="file"
                 accept="image/jpeg,image/png,image/webp"
@@ -104,15 +133,6 @@ export function Profile() {
             <p className="muted text-xs">
               JPG, PNG or WebP · up to 2 MB. Photos are cropped to a square.
             </p>
-            {user.avatarUpdatedAt && (
-              <Button
-                disabled={busy}
-                variant="ghost"
-                onClick={() => void save("/api/account/avatar", "DELETE")}
-              >
-                Remove photo
-              </Button>
-            )}
             {!user.emailVerifiedAt && (
               <Button
                 disabled={busy}
@@ -205,9 +225,9 @@ export function Profile() {
                 </label>
                 <label className="field">
                   Current password (only to change email)
-                  <input
+                  <PasswordInput
                     name="currentPassword"
-                    type="password"
+
                     autoComplete="current-password"
                     maxLength={128}
                   />

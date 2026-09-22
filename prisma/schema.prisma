@@ -146,6 +146,9 @@ model UserPreference {
   userId String @id @db.Uuid
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   theme String @default("system")
+  accent String @default("emerald")
+  contrast Boolean @default(false)
+  colorfulHeader Boolean @default(false)
   autosave Boolean @default(false)
 }
 model Subscription {

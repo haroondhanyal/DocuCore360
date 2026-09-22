@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useState, Suspense } from "react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   LayoutDashboard,
@@ -59,18 +59,29 @@ export function Shell({ children }: { children: React.ReactNode }) {
     queryFn: () => api<{ user: SessionUser | null }>("/api/auth/session"),
   });
   function links(items: typeof main) {
-    return items.map((item) => (
-      <Link
-        key={item.label}
-        href={item.href}
-        onClick={() => setMobile(false)}
-        className={cn("nav-link", path === item.href && "active")}
-      >
-        <item.icon size={18} />
-        <span>{item.label}</span>
-        {item.label === "All tools" && <span className="nav-count">{tools.length}</span>}
-      </Link>
-    ));
+    return items.map((item) => {
+      const content = (
+        <>
+          <item.icon size={18} />
+          <span>{item.label}</span>
+          {item.label === "All tools" && <span className="nav-count">{tools.length}</span>}
+        </>
+      );
+      return (
+        <Suspense
+          key={item.label}
+          fallback={
+            <Link className="nav-link" href={item.href}>
+              {content}
+            </Link>
+          }
+        >
+          <NavigationLink href={item.href} onClick={() => setMobile(false)}>
+            {content}
+          </NavigationLink>
+        </Suspense>
+      );
+    });
   }
   return (
     <div className="app-shell">
@@ -123,7 +134,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
                 View & edit profile
               </Link>
               <Link
-                href="/settings"
+                href="/profile/settings"
                 onClick={(e) => {
                   e.currentTarget.closest("details")?.removeAttribute("open");
                   setMobile(false);
@@ -260,5 +271,33 @@ export function Shell({ children }: { children: React.ReactNode }) {
         </footer>
       </div>
     </div>
+  );
+}
+
+function NavigationLink({
+  href,
+  onClick,
+  children,
+}: {
+  href: string;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  const path = usePathname();
+  const params = useSearchParams();
+  const [pathname, search] = href.split("?");
+  const active =
+    path === pathname &&
+    (pathname !== "/tools" ||
+      (params.get("category") ?? "") === (new URLSearchParams(search).get("category") ?? ""));
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      aria-current={active ? "page" : undefined}
+      className={cn("nav-link", active && "active")}
+    >
+      {children}
+    </Link>
   );
 }

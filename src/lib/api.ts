@@ -1,3 +1,4 @@
+import type { Appearance } from "@/config/appearance";
 export async function api<T>(url: string, options?: RequestInit): Promise<T> {
   const response = await fetch(url, {
     ...options,
@@ -21,4 +22,5 @@ export type SessionUser = {
   jobTitle?: string | null;
   avatarUpdatedAt?: string | null;
   emailVerifiedAt?: string | null;
+  preference?: Appearance | null;
 };

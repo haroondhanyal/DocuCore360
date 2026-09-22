@@ -77,7 +77,7 @@ test("profile updates persist, avatars stay private, and email changes revoke se
     await page.reload();
     await expect(page.getByLabel("Contact number")).toHaveValue("+92 300 1234567");
     await expect(page.getByLabel("About you")).toHaveValue("I design useful documents.");
-    await page.getByRole("button", { name: "Remove photo" }).click();
+    await page.getByRole("button", { name: "Delete profile photo" }).click();
     await expect(page.getByRole("status")).toHaveText("Profile photo removed.");
     expect((await page.request.get("/api/account/avatar")).status()).toBe(404);
     expect(

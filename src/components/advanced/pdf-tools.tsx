@@ -1,4 +1,5 @@
 "use client";
+import { PasswordInput } from "@/components/ui/password-input";
 import { useProcessingHistory } from "@/hooks/use-processing-history";
 import { useRef, useState, useEffect } from "react";
 import { Dropzone } from "@/components/upload/dropzone";
@@ -294,8 +295,7 @@ export function AdvancedPdf({ id }: { id: string }) {
           <>
             <label>
               Document password
-              <input
-                type="password"
+              <PasswordInput
                 className="field"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

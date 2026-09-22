@@ -46,11 +46,21 @@ The application includes **29 working tool routes**, a personal file library, ac
 
 Open the account card at the top of the sidebar to view your name and photo, edit your profile, open settings or sign out.
 
-Your private profile includes your name, email, contact number, job title, location and bio. Upload or remove a JPG, PNG or WebP photo; the app creates a square avatar and updates the sidebar. Email changes require your current password, revoke existing sessions and clear verification until the new address is verified.
+Your private profile includes your name, email, contact number, job title, location and bio. Use the pencil and delete icons directly on your photo to replace or remove a JPG, PNG or WebP avatar; the app creates a square avatar and updates the sidebar and header. Email changes require your current password, revoke existing sessions and clear verification until the new address is verified.
 
-Light, dark and system appearance modes are available in Settings. Core document tools can be used without an account; saved files, account drafts and profiles require sign-in.
+Workspace **Settings** (`/settings`) offers light, dark and system modes plus eight colour palettes: Emerald, Blue, Purple, Rose, Red, Orange, Teal and Gray. High contrast and colourful header/buttons are independent options. Changes preview immediately and persist in this browser; **Save appearance** also saves them to your signed-in account for another browser or device.
+
+Personal **Account settings** (`/profile/settings`) is available from the sidebar profile menu and profile page. Change your password there; a successful change ends existing sessions and asks you to sign in again. Every password input—including login, signup, reset, account confirmation and protected PDF tools—has an accessible show/hide eye button.
+
+Use **Settings → View all records** (`/records`) to browse your own saved files and versions, processing history and account drafts. The existing library pagination and history limits still apply: files load 50 per page, history shows the latest 200 records, and an account can retain up to 20 editable drafts.
+
+**All tools** in the sidebar displays all 29 tools. PDF tools, Image tools, Convert, OCR and Sign & protect display their matching tools; the selected category stays in sync with the URL and browser back/forward navigation.
+
+Core document tools can be used without an account; saved files, account drafts and profiles require sign-in.
 
 ![Personal account profile](docs/screenshots/profile-desktop.png)
+
+![Purple workspace with high contrast and colourful buttons](docs/screenshots/appearance-dark-purple.png)
 
 ## Typical workflows
 
@@ -288,7 +298,7 @@ LOCAL_MAIL_TEST=1 npm run test:e2e
 
 On PowerShell, set `$env:LOCAL_MAIL_TEST="1"` before running the test command. Use a dedicated test database: these suites create and delete synthetic accounts and files.
 
-**Recorded local verification (22 September 2026):** 55 unit/database tests and all 33 Chromium scenarios passed, along with lint, TypeScript and the production build. A WebKit PDF merge smoke test also passed in prior verification. Firefox verification remains incomplete because of a browser-profile startup issue; a full cross-browser pass is not claimed.
+**Recorded local verification (22 September 2026):** 55 unit/database tests and all 36 Chromium scenarios passed, along with lint, TypeScript and the production build. A WebKit PDF merge smoke test also passed in prior verification. Firefox verification remains incomplete because of a browser-profile startup issue; a full cross-browser pass is not claimed.
 
 ## Deployment and backups
 

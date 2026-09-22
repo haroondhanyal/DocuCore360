@@ -371,3 +371,22 @@ export function searchTools(query: string) {
     ),
   );
 }
+
+export const toolCategories = [
+  "All tools",
+  "PDF",
+  "Ready to use",
+  "Organize PDF",
+  "Read & Edit",
+  "Convert",
+  "Image",
+  "Security",
+  "OCR",
+] as const;
+export function matchesToolCategory(tool: ToolDefinition, category: string) {
+  if (category === "All tools") return true;
+  if (category === "PDF") return tool.acceptedFormats.includes(".pdf") || tool.id.endsWith("-pdf");
+  if (category === "Image") return tool.category === "Image Tools" || tool.id.includes("image");
+  if (category === "Ready to use") return tool.status === "stable";
+  return tool.category === category;
+}
