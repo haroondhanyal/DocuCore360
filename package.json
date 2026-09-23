@@ -24,7 +24,15 @@
     "backup": "tsx scripts/backup.ts",
     "backup:verify": "tsx scripts/verify-backup.ts",
     "mail:local:start": "docker compose -p docucore360-local-mail -f deploy/mailpit.local.yaml up -d",
-    "mail:local:stop": "docker compose -p docucore360-local-mail -f deploy/mailpit.local.yaml stop"
+    "mail:local:stop": "docker compose -p docucore360-local-mail -f deploy/mailpit.local.yaml stop",
+    "automation:inventory": "node scripts/automation/inventory.mjs",
+    "automation:ui": "playwright test -c playwright.automation.config.ts --grep-invert \"@security|@validation\"",
+    "automation:api": "playwright test -c playwright.automation.config.ts --grep \"@security|@validation\"",
+    "automation:bdd": "cucumber-js",
+    "automation:performance": "node scripts/automation/performance.mjs",
+    "automation:report": "node scripts/automation/report.mjs",
+    "automation:complete": "node scripts/automation/run.mjs",
+    "automation:open": "node scripts/automation/serve.mjs"
   },
   "dependencies": {
     "@pdf-lib/fontkit": "^1.1.1",
@@ -67,6 +75,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
+    "@cucumber/cucumber": "^13.2.1",
     "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4.3.3",
     "@types/diff": "^7.0.2",
@@ -76,6 +85,9 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@types/sanitize-html": "^2.16.1",
+    "allure-commandline": "^2.46.1",
+    "allure-cucumberjs": "^3.12.2",
+    "allure-playwright": "^3.12.2",
     "dotenv": "^18.0.1",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.3.5",

@@ -1,0 +1,2009 @@
+{
+  "functional": 400,
+  "playwright": 352,
+  "cucumber": 48,
+  "performance": 20,
+  "unit": 55,
+  "scenarios": [
+    {
+      "title": "DC-A11Y-001 / accessibility in light",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-001"
+    },
+    {
+      "title": "DC-A11Y-002 /tools accessibility in light",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-002"
+    },
+    {
+      "title": "DC-A11Y-003 /favorites accessibility in light",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-003"
+    },
+    {
+      "title": "DC-A11Y-004 /login accessibility in light",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-004"
+    },
+    {
+      "title": "DC-A11Y-005 /register accessibility in light",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-005"
+    },
+    {
+      "title": "DC-A11Y-006 /forgot-password accessibility in light",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-006"
+    },
+    {
+      "title": "DC-A11Y-007 /reset-password accessibility in light",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-007"
+    },
+    {
+      "title": "DC-A11Y-008 /verify-email accessibility in light",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-008"
+    },
+    {
+      "title": "DC-A11Y-009 /settings accessibility in light",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-009"
+    },
+    {
+      "title": "DC-A11Y-010 /privacy accessibility in light",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-010"
+    },
+    {
+      "title": "DC-A11Y-011 /help accessibility in light",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-011"
+    },
+    {
+      "title": "DC-A11Y-012 /profile accessibility in light",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-012"
+    },
+    {
+      "title": "DC-A11Y-013 /records accessibility in light",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-013"
+    },
+    {
+      "title": "DC-A11Y-014 /profile/settings accessibility in light",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-014"
+    },
+    {
+      "title": "DC-A11Y-015 / accessibility in dark",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-015"
+    },
+    {
+      "title": "DC-A11Y-016 /tools accessibility in dark",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-016"
+    },
+    {
+      "title": "DC-A11Y-017 /favorites accessibility in dark",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-017"
+    },
+    {
+      "title": "DC-A11Y-018 /login accessibility in dark",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-018"
+    },
+    {
+      "title": "DC-A11Y-019 /register accessibility in dark",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-019"
+    },
+    {
+      "title": "DC-A11Y-020 /forgot-password accessibility in dark",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-020"
+    },
+    {
+      "title": "DC-A11Y-021 /reset-password accessibility in dark",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-021"
+    },
+    {
+      "title": "DC-A11Y-022 /verify-email accessibility in dark",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-022"
+    },
+    {
+      "title": "DC-A11Y-023 /settings accessibility in dark",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-023"
+    },
+    {
+      "title": "DC-A11Y-024 /privacy accessibility in dark",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-024"
+    },
+    {
+      "title": "DC-A11Y-025 /help accessibility in dark",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-025"
+    },
+    {
+      "title": "DC-A11Y-026 /profile accessibility in dark",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-026"
+    },
+    {
+      "title": "DC-A11Y-027 /records accessibility in dark",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-027"
+    },
+    {
+      "title": "DC-A11Y-028 /profile/settings accessibility in dark",
+      "file": "tests/automation/specs/accessibility.spec.ts",
+      "id": "DC-A11Y-028"
+    },
+    {
+      "title": "DC-BUTTON-001 #000000 custom buttons in light",
+      "file": "tests/automation/specs/appearance.spec.ts",
+      "id": "DC-BUTTON-001"
+    },
+    {
+      "title": "DC-BUTTON-002 #ffffff custom buttons in light",
+      "file": "tests/automation/specs/appearance.spec.ts",
+      "id": "DC-BUTTON-002"
+    },
+    {
+      "title": "DC-BUTTON-003 #ff0000 custom buttons in light",
+      "file": "tests/automation/specs/appearance.spec.ts",
+      "id": "DC-BUTTON-003"
+    },
+    {
+      "title": "DC-BUTTON-004 #00ff00 custom buttons in light",
+      "file": "tests/automation/specs/appearance.spec.ts",
+      "id": "DC-BUTTON-004"
+    },
+    {
+      "title": "DC-BUTTON-005 #0000ff custom buttons in light",
+      "file": "tests/automation/specs/appearance.spec.ts",
+      "id": "DC-BUTTON-005"
+    },
+    {
+      "title": "DC-BUTTON-006 #ffff00 custom buttons in light",
+      "file": "tests/automation/specs/appearance.spec.ts",
+      "id": "DC-BUTTON-006"
+    },
+    {
+      "title": "DC-BUTTON-007 #808080 custom buttons in light",
+      "file": "tests/automation/specs/appearance.spec.ts",
+      "id": "DC-BUTTON-007"
+    },
+    {
+      "title": "DC-BUTTON-008 #ff00ff custom buttons in light",
+      "file": "tests/automation/specs/appearance.spec.ts",
+      "id": "DC-BUTTON-008"
+    },
+    {
+      "title": "DC-BUTTON-009 #000000 custom buttons in dark",
+      "file": "tests/automation/specs/appearance.spec.ts",
+      "id": "DC-BUTTON-009"
+    },
+    {
+      "title": "DC-BUTTON-010 #ffffff custom buttons in dark",
+      "file": "tests/automation/specs/appearance.spec.ts",
+      "id": "DC-BUTTON-010"
+    },
+    {
+      "title": "DC-BUTTON-011 #ff0000 custom buttons in dark",
+      "file": "tests/automation/specs/appearance.spec.ts",
+      "id": "DC-BUTTON-011"
+    },
+    {
+      "title": "DC-BUTTON-012 #00ff00 custom buttons in dark",
+      "file": "tests/automation/specs/appearance.spec.ts",
+      "id": "DC-BUTTON-012"
+    },
+    {
+      "title": "DC-BUTTON-013 #0000ff custom buttons in dark",
+      "file": "tests/automation/specs/appearance.spec.ts",
+      "id": "DC-BUTTON-013"
+    },
+    {
+      "title": "DC-BUTTON-014 #ffff00 custom buttons in dark",
+      "file": "tests/automation/specs/appearance.spec.ts",
+      "id": "DC-BUTTON-014"
+    },
+    {
+      "title": "DC-BUTTON-015 #808080 custom buttons in dark",
+      "file": "tests/automation/specs/appearance.spec.ts",
+      "id": "DC-BUTTON-015"
+    },
+    {
+      "title": "DC-BUTTON-016 #ff00ff custom buttons in dark",
+      "file": "tests/automation/specs/appearance.spec.ts",
+      "id": "DC-BUTTON-016"
+    },
+    {
+      "title": "DC-ROUTE-001 Merge PDF at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-001"
+    },
+    {
+      "title": "DC-ROUTE-002 Split PDF at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-002"
+    },
+    {
+      "title": "DC-ROUTE-003 PDF Reader at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-003"
+    },
+    {
+      "title": "DC-ROUTE-004 Organize PDF at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-004"
+    },
+    {
+      "title": "DC-ROUTE-005 Images to PDF at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-005"
+    },
+    {
+      "title": "DC-ROUTE-006 PDF to Image at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-006"
+    },
+    {
+      "title": "DC-ROUTE-007 Edit PDF at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-007"
+    },
+    {
+      "title": "DC-ROUTE-008 Compress PDF at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-008"
+    },
+    {
+      "title": "DC-ROUTE-009 Sign PDF at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-009"
+    },
+    {
+      "title": "DC-ROUTE-010 OCR Documents at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-010"
+    },
+    {
+      "title": "DC-ROUTE-011 Image Editor at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-011"
+    },
+    {
+      "title": "DC-ROUTE-012 Word to PDF at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-012"
+    },
+    {
+      "title": "DC-ROUTE-013 PDF to Word at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-013"
+    },
+    {
+      "title": "DC-ROUTE-014 Compress Image at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-014"
+    },
+    {
+      "title": "DC-ROUTE-015 Protect PDF at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-015"
+    },
+    {
+      "title": "DC-ROUTE-016 Watermark PDF at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-016"
+    },
+    {
+      "title": "DC-ROUTE-017 Page Numbers at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-017"
+    },
+    {
+      "title": "DC-ROUTE-018 Headers & Footers at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-018"
+    },
+    {
+      "title": "DC-ROUTE-019 PDF Metadata at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-019"
+    },
+    {
+      "title": "DC-ROUTE-020 PDF Forms at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-020"
+    },
+    {
+      "title": "DC-ROUTE-021 Redact PDF at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-021"
+    },
+    {
+      "title": "DC-ROUTE-022 Unlock PDF at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-022"
+    },
+    {
+      "title": "DC-ROUTE-023 Excel to PDF at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-023"
+    },
+    {
+      "title": "DC-ROUTE-024 PDF to Text at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-024"
+    },
+    {
+      "title": "DC-ROUTE-025 PDF to HTML at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-025"
+    },
+    {
+      "title": "DC-ROUTE-026 Text to PDF at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-026"
+    },
+    {
+      "title": "DC-ROUTE-027 HTML to PDF at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-027"
+    },
+    {
+      "title": "DC-ROUTE-028 PDF Tables at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-028"
+    },
+    {
+      "title": "DC-ROUTE-029 Compare PDFs at desktop",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-029"
+    },
+    {
+      "title": "DC-ROUTE-030 Merge PDF at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-030"
+    },
+    {
+      "title": "DC-ROUTE-031 Split PDF at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-031"
+    },
+    {
+      "title": "DC-ROUTE-032 PDF Reader at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-032"
+    },
+    {
+      "title": "DC-ROUTE-033 Organize PDF at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-033"
+    },
+    {
+      "title": "DC-ROUTE-034 Images to PDF at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-034"
+    },
+    {
+      "title": "DC-ROUTE-035 PDF to Image at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-035"
+    },
+    {
+      "title": "DC-ROUTE-036 Edit PDF at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-036"
+    },
+    {
+      "title": "DC-ROUTE-037 Compress PDF at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-037"
+    },
+    {
+      "title": "DC-ROUTE-038 Sign PDF at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-038"
+    },
+    {
+      "title": "DC-ROUTE-039 OCR Documents at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-039"
+    },
+    {
+      "title": "DC-ROUTE-040 Image Editor at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-040"
+    },
+    {
+      "title": "DC-ROUTE-041 Word to PDF at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-041"
+    },
+    {
+      "title": "DC-ROUTE-042 PDF to Word at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-042"
+    },
+    {
+      "title": "DC-ROUTE-043 Compress Image at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-043"
+    },
+    {
+      "title": "DC-ROUTE-044 Protect PDF at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-044"
+    },
+    {
+      "title": "DC-ROUTE-045 Watermark PDF at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-045"
+    },
+    {
+      "title": "DC-ROUTE-046 Page Numbers at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-046"
+    },
+    {
+      "title": "DC-ROUTE-047 Headers & Footers at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-047"
+    },
+    {
+      "title": "DC-ROUTE-048 PDF Metadata at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-048"
+    },
+    {
+      "title": "DC-ROUTE-049 PDF Forms at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-049"
+    },
+    {
+      "title": "DC-ROUTE-050 Redact PDF at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-050"
+    },
+    {
+      "title": "DC-ROUTE-051 Unlock PDF at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-051"
+    },
+    {
+      "title": "DC-ROUTE-052 Excel to PDF at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-052"
+    },
+    {
+      "title": "DC-ROUTE-053 PDF to Text at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-053"
+    },
+    {
+      "title": "DC-ROUTE-054 PDF to HTML at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-054"
+    },
+    {
+      "title": "DC-ROUTE-055 Text to PDF at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-055"
+    },
+    {
+      "title": "DC-ROUTE-056 HTML to PDF at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-056"
+    },
+    {
+      "title": "DC-ROUTE-057 PDF Tables at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-057"
+    },
+    {
+      "title": "DC-ROUTE-058 Compare PDFs at tablet",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-058"
+    },
+    {
+      "title": "DC-ROUTE-059 Merge PDF at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-059"
+    },
+    {
+      "title": "DC-ROUTE-060 Split PDF at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-060"
+    },
+    {
+      "title": "DC-ROUTE-061 PDF Reader at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-061"
+    },
+    {
+      "title": "DC-ROUTE-062 Organize PDF at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-062"
+    },
+    {
+      "title": "DC-ROUTE-063 Images to PDF at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-063"
+    },
+    {
+      "title": "DC-ROUTE-064 PDF to Image at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-064"
+    },
+    {
+      "title": "DC-ROUTE-065 Edit PDF at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-065"
+    },
+    {
+      "title": "DC-ROUTE-066 Compress PDF at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-066"
+    },
+    {
+      "title": "DC-ROUTE-067 Sign PDF at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-067"
+    },
+    {
+      "title": "DC-ROUTE-068 OCR Documents at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-068"
+    },
+    {
+      "title": "DC-ROUTE-069 Image Editor at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-069"
+    },
+    {
+      "title": "DC-ROUTE-070 Word to PDF at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-070"
+    },
+    {
+      "title": "DC-ROUTE-071 PDF to Word at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-071"
+    },
+    {
+      "title": "DC-ROUTE-072 Compress Image at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-072"
+    },
+    {
+      "title": "DC-ROUTE-073 Protect PDF at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-073"
+    },
+    {
+      "title": "DC-ROUTE-074 Watermark PDF at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-074"
+    },
+    {
+      "title": "DC-ROUTE-075 Page Numbers at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-075"
+    },
+    {
+      "title": "DC-ROUTE-076 Headers & Footers at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-076"
+    },
+    {
+      "title": "DC-ROUTE-077 PDF Metadata at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-077"
+    },
+    {
+      "title": "DC-ROUTE-078 PDF Forms at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-078"
+    },
+    {
+      "title": "DC-ROUTE-079 Redact PDF at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-079"
+    },
+    {
+      "title": "DC-ROUTE-080 Unlock PDF at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-080"
+    },
+    {
+      "title": "DC-ROUTE-081 Excel to PDF at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-081"
+    },
+    {
+      "title": "DC-ROUTE-082 PDF to Text at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-082"
+    },
+    {
+      "title": "DC-ROUTE-083 PDF to HTML at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-083"
+    },
+    {
+      "title": "DC-ROUTE-084 Text to PDF at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-084"
+    },
+    {
+      "title": "DC-ROUTE-085 HTML to PDF at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-085"
+    },
+    {
+      "title": "DC-ROUTE-086 PDF Tables at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-086"
+    },
+    {
+      "title": "DC-ROUTE-087 Compare PDFs at mobile",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-ROUTE-087"
+    },
+    {
+      "title": "DC-SEARCH-001 Search locates Merge PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-001"
+    },
+    {
+      "title": "DC-FAV-001 Favorite lifecycle for Merge PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-001"
+    },
+    {
+      "title": "DC-SEARCH-002 Search locates Split PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-002"
+    },
+    {
+      "title": "DC-FAV-002 Favorite lifecycle for Split PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-002"
+    },
+    {
+      "title": "DC-SEARCH-003 Search locates PDF Reader",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-003"
+    },
+    {
+      "title": "DC-FAV-003 Favorite lifecycle for PDF Reader",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-003"
+    },
+    {
+      "title": "DC-SEARCH-004 Search locates Organize PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-004"
+    },
+    {
+      "title": "DC-FAV-004 Favorite lifecycle for Organize PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-004"
+    },
+    {
+      "title": "DC-SEARCH-005 Search locates Images to PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-005"
+    },
+    {
+      "title": "DC-FAV-005 Favorite lifecycle for Images to PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-005"
+    },
+    {
+      "title": "DC-SEARCH-006 Search locates PDF to Image",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-006"
+    },
+    {
+      "title": "DC-FAV-006 Favorite lifecycle for PDF to Image",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-006"
+    },
+    {
+      "title": "DC-SEARCH-007 Search locates Edit PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-007"
+    },
+    {
+      "title": "DC-FAV-007 Favorite lifecycle for Edit PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-007"
+    },
+    {
+      "title": "DC-SEARCH-008 Search locates Compress PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-008"
+    },
+    {
+      "title": "DC-FAV-008 Favorite lifecycle for Compress PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-008"
+    },
+    {
+      "title": "DC-SEARCH-009 Search locates Sign PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-009"
+    },
+    {
+      "title": "DC-FAV-009 Favorite lifecycle for Sign PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-009"
+    },
+    {
+      "title": "DC-SEARCH-010 Search locates OCR Documents",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-010"
+    },
+    {
+      "title": "DC-FAV-010 Favorite lifecycle for OCR Documents",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-010"
+    },
+    {
+      "title": "DC-SEARCH-011 Search locates Image Editor",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-011"
+    },
+    {
+      "title": "DC-FAV-011 Favorite lifecycle for Image Editor",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-011"
+    },
+    {
+      "title": "DC-SEARCH-012 Search locates Word to PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-012"
+    },
+    {
+      "title": "DC-FAV-012 Favorite lifecycle for Word to PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-012"
+    },
+    {
+      "title": "DC-SEARCH-013 Search locates PDF to Word",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-013"
+    },
+    {
+      "title": "DC-FAV-013 Favorite lifecycle for PDF to Word",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-013"
+    },
+    {
+      "title": "DC-SEARCH-014 Search locates Compress Image",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-014"
+    },
+    {
+      "title": "DC-FAV-014 Favorite lifecycle for Compress Image",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-014"
+    },
+    {
+      "title": "DC-SEARCH-015 Search locates Protect PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-015"
+    },
+    {
+      "title": "DC-FAV-015 Favorite lifecycle for Protect PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-015"
+    },
+    {
+      "title": "DC-SEARCH-016 Search locates Watermark PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-016"
+    },
+    {
+      "title": "DC-FAV-016 Favorite lifecycle for Watermark PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-016"
+    },
+    {
+      "title": "DC-SEARCH-017 Search locates Page Numbers",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-017"
+    },
+    {
+      "title": "DC-FAV-017 Favorite lifecycle for Page Numbers",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-017"
+    },
+    {
+      "title": "DC-SEARCH-018 Search locates Headers & Footers",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-018"
+    },
+    {
+      "title": "DC-FAV-018 Favorite lifecycle for Headers & Footers",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-018"
+    },
+    {
+      "title": "DC-SEARCH-019 Search locates PDF Metadata",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-019"
+    },
+    {
+      "title": "DC-FAV-019 Favorite lifecycle for PDF Metadata",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-019"
+    },
+    {
+      "title": "DC-SEARCH-020 Search locates PDF Forms",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-020"
+    },
+    {
+      "title": "DC-FAV-020 Favorite lifecycle for PDF Forms",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-020"
+    },
+    {
+      "title": "DC-SEARCH-021 Search locates Redact PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-021"
+    },
+    {
+      "title": "DC-FAV-021 Favorite lifecycle for Redact PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-021"
+    },
+    {
+      "title": "DC-SEARCH-022 Search locates Unlock PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-022"
+    },
+    {
+      "title": "DC-FAV-022 Favorite lifecycle for Unlock PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-022"
+    },
+    {
+      "title": "DC-SEARCH-023 Search locates Excel to PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-023"
+    },
+    {
+      "title": "DC-FAV-023 Favorite lifecycle for Excel to PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-023"
+    },
+    {
+      "title": "DC-SEARCH-024 Search locates PDF to Text",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-024"
+    },
+    {
+      "title": "DC-FAV-024 Favorite lifecycle for PDF to Text",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-024"
+    },
+    {
+      "title": "DC-SEARCH-025 Search locates PDF to HTML",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-025"
+    },
+    {
+      "title": "DC-FAV-025 Favorite lifecycle for PDF to HTML",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-025"
+    },
+    {
+      "title": "DC-SEARCH-026 Search locates Text to PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-026"
+    },
+    {
+      "title": "DC-FAV-026 Favorite lifecycle for Text to PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-026"
+    },
+    {
+      "title": "DC-SEARCH-027 Search locates HTML to PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-027"
+    },
+    {
+      "title": "DC-FAV-027 Favorite lifecycle for HTML to PDF",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-027"
+    },
+    {
+      "title": "DC-SEARCH-028 Search locates PDF Tables",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-028"
+    },
+    {
+      "title": "DC-FAV-028 Favorite lifecycle for PDF Tables",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-028"
+    },
+    {
+      "title": "DC-SEARCH-029 Search locates Compare PDFs",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-SEARCH-029"
+    },
+    {
+      "title": "DC-FAV-029 Favorite lifecycle for Compare PDFs",
+      "file": "tests/automation/specs/discovery.spec.ts",
+      "id": "DC-FAV-029"
+    },
+    {
+      "title": "DC-MERGE-001 Merge 1 and 1 pages",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-MERGE-001"
+    },
+    {
+      "title": "DC-MERGE-002 Merge 1 and 2 pages",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-MERGE-002"
+    },
+    {
+      "title": "DC-MERGE-003 Merge 2 and 1 pages",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-MERGE-003"
+    },
+    {
+      "title": "DC-MERGE-004 Merge 2 and 2 pages",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-MERGE-004"
+    },
+    {
+      "title": "DC-MERGE-005 Merge 2 and 3 pages",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-MERGE-005"
+    },
+    {
+      "title": "DC-MERGE-006 Merge 3 and 2 pages",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-MERGE-006"
+    },
+    {
+      "title": "DC-MERGE-007 Merge 3 and 4 pages",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-MERGE-007"
+    },
+    {
+      "title": "DC-MERGE-008 Merge 4 and 1 pages",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-MERGE-008"
+    },
+    {
+      "title": "DC-MERGE-009 Merge 5 and 3 pages",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-MERGE-009"
+    },
+    {
+      "title": "DC-MERGE-010 Merge 6 and 4 pages",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-MERGE-010"
+    },
+    {
+      "title": "DC-SPLIT-001 Split 1 pages into individual PDFs",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-SPLIT-001"
+    },
+    {
+      "title": "DC-SPLIT-002 Split 2 pages into individual PDFs",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-SPLIT-002"
+    },
+    {
+      "title": "DC-SPLIT-003 Split 3 pages into individual PDFs",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-SPLIT-003"
+    },
+    {
+      "title": "DC-SPLIT-004 Split 4 pages into individual PDFs",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-SPLIT-004"
+    },
+    {
+      "title": "DC-SPLIT-005 Split 5 pages into individual PDFs",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-SPLIT-005"
+    },
+    {
+      "title": "DC-SPLIT-006 Split 6 pages into individual PDFs",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-SPLIT-006"
+    },
+    {
+      "title": "DC-SPLIT-007 Split 7 pages into individual PDFs",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-SPLIT-007"
+    },
+    {
+      "title": "DC-SPLIT-008 Split 8 pages into individual PDFs",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-SPLIT-008"
+    },
+    {
+      "title": "DC-META-001 Metadata round trip 1: Invoice 2026",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-META-001"
+    },
+    {
+      "title": "DC-META-002 Metadata round trip 2: Quarterly Report",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-META-002"
+    },
+    {
+      "title": "DC-META-003 Metadata round trip 3: R&D <draft>",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-META-003"
+    },
+    {
+      "title": "DC-META-004 Metadata round trip 4: Client's copy",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-META-004"
+    },
+    {
+      "title": "DC-META-005 Metadata round trip 5: Numbers 0123456789",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-META-005"
+    },
+    {
+      "title": "DC-META-006 Metadata round trip 6: Mixed CASE title",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-META-006"
+    },
+    {
+      "title": "DC-META-007 Metadata round trip 7: AAAAAAAAAAAAAAAAAAAAAAAAA",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-META-007"
+    },
+    {
+      "title": "DC-META-008 Metadata round trip 8: Résumé café",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-META-008"
+    },
+    {
+      "title": "DC-IMAGE-001 image/png image export at 160x120",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-IMAGE-001"
+    },
+    {
+      "title": "DC-IMAGE-002 image/png image export at 80x60",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-IMAGE-002"
+    },
+    {
+      "title": "DC-IMAGE-003 image/jpeg image export at 160x120",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-IMAGE-003"
+    },
+    {
+      "title": "DC-IMAGE-004 image/jpeg image export at 80x60",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-IMAGE-004"
+    },
+    {
+      "title": "DC-IMAGE-005 image/webp image export at 160x120",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-IMAGE-005"
+    },
+    {
+      "title": "DC-IMAGE-006 image/webp image export at 80x60",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-IMAGE-006"
+    },
+    {
+      "title": "DC-TEXT-001 Text-to-PDF round trip variant 1",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-TEXT-001"
+    },
+    {
+      "title": "DC-TEXT-002 Text-to-PDF round trip variant 2",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-TEXT-002"
+    },
+    {
+      "title": "DC-TEXT-003 Text-to-PDF round trip variant 3",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-TEXT-003"
+    },
+    {
+      "title": "DC-TEXT-004 Text-to-PDF round trip variant 4",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-TEXT-004"
+    },
+    {
+      "title": "DC-TEXT-005 Text-to-PDF round trip variant 5",
+      "file": "tests/automation/specs/documents.spec.ts",
+      "id": "DC-TEXT-005"
+    },
+    {
+      "title": "DC-GUEST-001 GET /api/files requires a session",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-GUEST-001"
+    },
+    {
+      "title": "DC-GUEST-002 GET /api/folders requires a session",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-GUEST-002"
+    },
+    {
+      "title": "DC-GUEST-003 GET /api/favorites requires a session",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-GUEST-003"
+    },
+    {
+      "title": "DC-GUEST-004 GET /api/history requires a session",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-GUEST-004"
+    },
+    {
+      "title": "DC-GUEST-005 GET /api/drafts requires a session",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-GUEST-005"
+    },
+    {
+      "title": "DC-GUEST-006 GET /api/admin requires a session",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-GUEST-006"
+    },
+    {
+      "title": "DC-GUEST-007 GET /api/account/avatar requires a session",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-GUEST-007"
+    },
+    {
+      "title": "DC-GUEST-008 GET /api/files/00000000-0000-4000-8000-000000000001 requires a session",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-GUEST-008"
+    },
+    {
+      "title": "DC-GUEST-009 GET /api/files/00000000-0000-4000-8000-000000000001/versions requires a session",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-GUEST-009"
+    },
+    {
+      "title": "DC-GUEST-010 GET /api/drafts/00000000-0000-4000-8000-000000000001 requires a session",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-GUEST-010"
+    },
+    {
+      "title": "DC-GUEST-011 PATCH /api/account requires a session",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-GUEST-011"
+    },
+    {
+      "title": "DC-GUEST-012 POST /api/files/upload requires a session",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-GUEST-012"
+    },
+    {
+      "title": "DC-GUEST-013 POST /api/favorites requires a session",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-GUEST-013"
+    },
+    {
+      "title": "DC-CSRF-001 POST /api/auth/login rejects missing origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-001"
+    },
+    {
+      "title": "DC-CSRF-002 POST /api/auth/register rejects missing origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-002"
+    },
+    {
+      "title": "DC-CSRF-003 POST /api/auth/logout rejects missing origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-003"
+    },
+    {
+      "title": "DC-CSRF-004 PATCH /api/account rejects missing origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-004"
+    },
+    {
+      "title": "DC-CSRF-005 DELETE /api/account rejects missing origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-005"
+    },
+    {
+      "title": "DC-CSRF-006 PUT /api/account/avatar rejects missing origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-006"
+    },
+    {
+      "title": "DC-CSRF-007 DELETE /api/account/avatar rejects missing origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-007"
+    },
+    {
+      "title": "DC-CSRF-008 POST /api/files/upload rejects missing origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-008"
+    },
+    {
+      "title": "DC-CSRF-009 PATCH /api/files/00000000-0000-4000-8000-000000000001 rejects missing origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-009"
+    },
+    {
+      "title": "DC-CSRF-010 DELETE /api/files/00000000-0000-4000-8000-000000000001 rejects missing origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-010"
+    },
+    {
+      "title": "DC-CSRF-011 POST /api/folders rejects missing origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-011"
+    },
+    {
+      "title": "DC-CSRF-012 POST /api/favorites rejects missing origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-012"
+    },
+    {
+      "title": "DC-CSRF-013 POST /api/history rejects missing origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-013"
+    },
+    {
+      "title": "DC-CSRF-014 POST /api/drafts rejects missing origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-014"
+    },
+    {
+      "title": "DC-CSRF-015 POST /api/auth/login rejects https://untrusted.example origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-015"
+    },
+    {
+      "title": "DC-CSRF-016 POST /api/auth/register rejects https://untrusted.example origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-016"
+    },
+    {
+      "title": "DC-CSRF-017 POST /api/auth/logout rejects https://untrusted.example origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-017"
+    },
+    {
+      "title": "DC-CSRF-018 PATCH /api/account rejects https://untrusted.example origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-018"
+    },
+    {
+      "title": "DC-CSRF-019 DELETE /api/account rejects https://untrusted.example origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-019"
+    },
+    {
+      "title": "DC-CSRF-020 PUT /api/account/avatar rejects https://untrusted.example origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-020"
+    },
+    {
+      "title": "DC-CSRF-021 DELETE /api/account/avatar rejects https://untrusted.example origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-021"
+    },
+    {
+      "title": "DC-CSRF-022 POST /api/files/upload rejects https://untrusted.example origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-022"
+    },
+    {
+      "title": "DC-CSRF-023 PATCH /api/files/00000000-0000-4000-8000-000000000001 rejects https://untrusted.example origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-023"
+    },
+    {
+      "title": "DC-CSRF-024 DELETE /api/files/00000000-0000-4000-8000-000000000001 rejects https://untrusted.example origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-024"
+    },
+    {
+      "title": "DC-CSRF-025 POST /api/folders rejects https://untrusted.example origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-025"
+    },
+    {
+      "title": "DC-CSRF-026 POST /api/favorites rejects https://untrusted.example origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-026"
+    },
+    {
+      "title": "DC-CSRF-027 POST /api/history rejects https://untrusted.example origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-027"
+    },
+    {
+      "title": "DC-CSRF-028 POST /api/drafts rejects https://untrusted.example origin",
+      "file": "tests/automation/specs/security.spec.ts",
+      "id": "DC-CSRF-028"
+    },
+    {
+      "title": "DC-PROFILE-VAL-001 rejects short name",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-001"
+    },
+    {
+      "title": "DC-PROFILE-VAL-002 rejects long name",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-002"
+    },
+    {
+      "title": "DC-PROFILE-VAL-003 rejects blank name",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-003"
+    },
+    {
+      "title": "DC-PROFILE-VAL-004 rejects invalid email",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-004"
+    },
+    {
+      "title": "DC-PROFILE-VAL-005 rejects short handle",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-005"
+    },
+    {
+      "title": "DC-PROFILE-VAL-006 rejects handle spaces",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-006"
+    },
+    {
+      "title": "DC-PROFILE-VAL-007 rejects handle punctuation",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-007"
+    },
+    {
+      "title": "DC-PROFILE-VAL-008 rejects long handle",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-008"
+    },
+    {
+      "title": "DC-PROFILE-VAL-009 rejects invalid label",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-009"
+    },
+    {
+      "title": "DC-PROFILE-VAL-010 rejects invalid mode",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-010"
+    },
+    {
+      "title": "DC-PROFILE-VAL-011 rejects invalid accent",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-011"
+    },
+    {
+      "title": "DC-PROFILE-VAL-012 rejects invalid colour",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-012"
+    },
+    {
+      "title": "DC-PROFILE-VAL-013 rejects short hex",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-013"
+    },
+    {
+      "title": "DC-PROFILE-VAL-014 rejects string contrast",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-014"
+    },
+    {
+      "title": "DC-PROFILE-VAL-015 rejects string header",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-015"
+    },
+    {
+      "title": "DC-PROFILE-VAL-016 rejects bad phone",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-016"
+    },
+    {
+      "title": "DC-PROFILE-VAL-017 rejects long bio",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-017"
+    },
+    {
+      "title": "DC-PROFILE-VAL-018 rejects long location",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-018"
+    },
+    {
+      "title": "DC-PROFILE-VAL-019 rejects long job title",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-019"
+    },
+    {
+      "title": "DC-PROFILE-VAL-020 rejects password without confirmation",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-PROFILE-VAL-020"
+    },
+    {
+      "title": "DC-AUTH-VAL-001 registration rejects missing email",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-AUTH-VAL-001"
+    },
+    {
+      "title": "DC-AUTH-VAL-002 registration rejects malformed email",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-AUTH-VAL-002"
+    },
+    {
+      "title": "DC-AUTH-VAL-003 registration rejects empty email",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-AUTH-VAL-003"
+    },
+    {
+      "title": "DC-AUTH-VAL-004 registration rejects overlong email",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-AUTH-VAL-004"
+    },
+    {
+      "title": "DC-AUTH-VAL-005 registration rejects missing password",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-AUTH-VAL-005"
+    },
+    {
+      "title": "DC-AUTH-VAL-006 registration rejects short password",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-AUTH-VAL-006"
+    },
+    {
+      "title": "DC-AUTH-VAL-007 registration rejects long password",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-AUTH-VAL-007"
+    },
+    {
+      "title": "DC-AUTH-VAL-008 registration rejects missing name",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-AUTH-VAL-008"
+    },
+    {
+      "title": "DC-AUTH-VAL-009 registration rejects blank name",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-AUTH-VAL-009"
+    },
+    {
+      "title": "DC-AUTH-VAL-010 registration rejects short name",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-AUTH-VAL-010"
+    },
+    {
+      "title": "DC-AUTH-VAL-011 registration rejects long name",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-AUTH-VAL-011"
+    },
+    {
+      "title": "DC-AUTH-VAL-012 registration rejects invalid remember",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-AUTH-VAL-012"
+    },
+    {
+      "title": "DC-FOLDER-VAL-001 folder rejects missing name",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-FOLDER-VAL-001"
+    },
+    {
+      "title": "DC-FOLDER-VAL-002 folder rejects empty name",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-FOLDER-VAL-002"
+    },
+    {
+      "title": "DC-FOLDER-VAL-003 folder rejects blank name",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-FOLDER-VAL-003"
+    },
+    {
+      "title": "DC-FOLDER-VAL-004 folder rejects long name",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-FOLDER-VAL-004"
+    },
+    {
+      "title": "DC-FOLDER-VAL-005 folder rejects numeric name",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-FOLDER-VAL-005"
+    },
+    {
+      "title": "DC-FOLDER-VAL-006 folder rejects invalid parent",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-FOLDER-VAL-006"
+    },
+    {
+      "title": "DC-FOLDER-VAL-007 folder rejects numeric parent",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-FOLDER-VAL-007"
+    },
+    {
+      "title": "DC-FOLDER-VAL-008 folder rejects array parent",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-FOLDER-VAL-008"
+    },
+    {
+      "title": "DC-UPLOAD-VAL-001 rejects JSON instead of multipart",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-UPLOAD-VAL-001"
+    },
+    {
+      "title": "DC-UPLOAD-VAL-002 rejects no file",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-UPLOAD-VAL-002"
+    },
+    {
+      "title": "DC-UPLOAD-VAL-003 rejects no consent",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-UPLOAD-VAL-003"
+    },
+    {
+      "title": "DC-UPLOAD-VAL-004 rejects false consent",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-UPLOAD-VAL-004"
+    },
+    {
+      "title": "DC-UPLOAD-VAL-005 rejects unsupported extension",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-UPLOAD-VAL-005"
+    },
+    {
+      "title": "DC-UPLOAD-VAL-006 rejects empty file",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-UPLOAD-VAL-006"
+    },
+    {
+      "title": "DC-UPLOAD-VAL-007 rejects wrong signature",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-UPLOAD-VAL-007"
+    },
+    {
+      "title": "DC-UPLOAD-VAL-008 rejects invalid replacement ID",
+      "file": "tests/automation/specs/validation.spec.ts",
+      "id": "DC-UPLOAD-VAL-008"
+    },
+    {
+      "title": "metadata and form field exports are real",
+      "file": "tests/e2e/specs/advanced.spec.ts",
+      "id": "DC-REG-001"
+    },
+    {
+      "title": "permanent redaction discards original text",
+      "file": "tests/e2e/specs/advanced.spec.ts",
+      "id": "DC-REG-002"
+    },
+    {
+      "title": "image studio exports resized PNG",
+      "file": "tests/e2e/specs/advanced.spec.ts",
+      "id": "DC-REG-003"
+    },
+    {
+      "title": "Word and spreadsheet convert to PDFs and PDF to DOCX",
+      "file": "tests/e2e/specs/advanced.spec.ts",
+      "id": "DC-REG-004"
+    },
+    {
+      "title": "OCR produces editable text and a searchable PDF without uploads",
+      "file": "tests/e2e/specs/advanced.spec.ts",
+      "id": "DC-REG-005"
+    },
+    {
+      "title": "AES-256 password round trip rejects an incorrect password",
+      "file": "tests/e2e/specs/advanced.spec.ts",
+      "id": "DC-REG-006"
+    },
+    {
+      "title": "local editor draft survives reload and deletes explicitly",
+      "file": "tests/e2e/specs/advanced.spec.ts",
+      "id": "DC-REG-007"
+    },
+    {
+      "title": "OCR cancellation returns control to the user",
+      "file": "tests/e2e/specs/advanced.spec.ts",
+      "id": "DC-REG-008"
+    },
+    {
+      "title": "table review exports real XLSX and comparison detects text",
+      "file": "tests/e2e/specs/advanced.spec.ts",
+      "id": "DC-REG-009"
+    },
+    {
+      "title": "HTML conversion does not execute scripts or fetch external images",
+      "file": "tests/e2e/specs/advanced.spec.ts",
+      "id": "DC-REG-010"
+    },
+    {
+      "title": "registration, persistence, ownership checks, deletion and logout",
+      "file": "tests/e2e/specs/auth.spec.ts",
+      "id": "DC-REG-011"
+    },
+    {
+      "title": "unauthenticated APIs and CSRF are blocked",
+      "file": "tests/e2e/specs/auth.spec.ts",
+      "id": "DC-REG-012"
+    },
+    {
+      "title": "PDF editor adds text, supports history, and exports searchable annotations",
+      "file": "tests/e2e/specs/editor.spec.ts",
+      "id": "DC-REG-013"
+    },
+    {
+      "title": "editor masks detected text honestly and rotates annotations with a page",
+      "file": "tests/e2e/specs/editor.spec.ts",
+      "id": "DC-REG-014"
+    },
+    {
+      "title": "editor inserts shapes and a typed signature, then preserves edits across pages",
+      "file": "tests/e2e/specs/editor.spec.ts",
+      "id": "DC-REG-015"
+    },
+    {
+      "title": "verification and password reset deliver usable single-use links to the local inbox",
+      "file": "tests/e2e/specs/local-mail.spec.ts",
+      "id": "DC-REG-016"
+    },
+    {
+      "title": "profile updates persist, avatars stay private, and email changes revoke sessions",
+      "file": "tests/e2e/specs/profile.spec.ts",
+      "id": "DC-REG-017"
+    },
+    {
+      "title": "account drafts are private, restore across sessions, and reject stale revisions",
+      "file": "tests/e2e/specs/release.spec.ts",
+      "id": "DC-REG-018"
+    },
+    {
+      "title": "nested folders reject descendant moves and file pagination has stable metadata",
+      "file": "tests/e2e/specs/release.spec.ts",
+      "id": "DC-REG-019"
+    },
+    {
+      "title": "visual redaction marks multiple areas and drawing exports",
+      "file": "tests/e2e/specs/release.spec.ts",
+      "id": "DC-REG-020"
+    },
+    {
+      "title": "multilingual OCR exposes local language choices and Urdu text PDF embeds a font",
+      "file": "tests/e2e/specs/release.spec.ts",
+      "id": "DC-REG-021"
+    },
+    {
+      "title": "overview and authentication have no serious or critical accessibility violations",
+      "file": "tests/e2e/specs/release.spec.ts",
+      "id": "DC-REG-022"
+    },
+    {
+      "title": "overview, search, favorites and active OCR state",
+      "file": "tests/e2e/specs/tools.spec.ts",
+      "id": "DC-REG-023"
+    },
+    {
+      "title": "reader renders, searches, navigates and rotates",
+      "file": "tests/e2e/specs/tools.spec.ts",
+      "id": "DC-REG-024"
+    },
+    {
+      "title": "merge exports the combined page count",
+      "file": "tests/e2e/specs/tools.spec.ts",
+      "id": "DC-REG-025"
+    },
+    {
+      "title": "split exports valid ZIP entries",
+      "file": "tests/e2e/specs/tools.spec.ts",
+      "id": "DC-REG-026"
+    },
+    {
+      "title": "organizer exports rotation, duplication and blank pages",
+      "file": "tests/e2e/specs/tools.spec.ts",
+      "id": "DC-REG-027"
+    },
+    {
+      "title": "images to PDF produces a real landscape PDF",
+      "file": "tests/e2e/specs/tools.spec.ts",
+      "id": "DC-REG-028"
+    },
+    {
+      "title": "PDF to images produces actual PNG data",
+      "file": "tests/e2e/specs/tools.spec.ts",
+      "id": "DC-REG-029"
+    },
+    {
+      "title": "rejects disguised and oversized uploads",
+      "file": "tests/e2e/specs/tools.spec.ts",
+      "id": "DC-REG-030"
+    },
+    {
+      "title": "mobile layout opens navigation without horizontal overflow",
+      "file": "tests/e2e/specs/tools.spec.ts",
+      "id": "DC-REG-031"
+    },
+    {
+      "title": "sidebar categories, all tools and browser history stay in sync",
+      "file": "tests/e2e/specs/workspace-ui.spec.ts",
+      "id": "DC-REG-032"
+    },
+    {
+      "title": "password visibility works without submitting, and account password lives in profile settings",
+      "file": "tests/e2e/specs/workspace-ui.spec.ts",
+      "id": "DC-REG-033"
+    },
+    {
+      "title": "all eight accents preview, save to the account and expose only owned records",
+      "file": "tests/e2e/specs/workspace-ui.spec.ts",
+      "id": "DC-REG-034"
+    },
+    {
+      "title": "unique handles, sidebar identity and custom button colours persist",
+      "file": "tests/e2e/specs/workspace-ui.spec.ts",
+      "id": "DC-REG-035"
+    },
+    {
+      "title": "folders, favorites, snapshots and history enforce ownership",
+      "file": "tests/e2e/specs/workspace.spec.ts",
+      "id": "DC-REG-036"
+    },
+    {
+      "title": "admin health, role boundary and disabling sessions",
+      "file": "tests/e2e/specs/workspace.spec.ts",
+      "id": "DC-REG-037"
+    },
+    {
+      "id": "DC-BDD-001",
+      "title": "system display with emerald workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-002",
+      "title": "system display with blue workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-003",
+      "title": "system display with purple workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-004",
+      "title": "system display with rose workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-005",
+      "title": "system display with red workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-006",
+      "title": "system display with orange workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-007",
+      "title": "system display with teal workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-008",
+      "title": "system display with gray workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-009",
+      "title": "light display with emerald workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-010",
+      "title": "light display with blue workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-011",
+      "title": "light display with purple workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-012",
+      "title": "light display with rose workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-013",
+      "title": "light display with red workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-014",
+      "title": "light display with orange workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-015",
+      "title": "light display with teal workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-016",
+      "title": "light display with gray workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-017",
+      "title": "dark display with emerald workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-018",
+      "title": "dark display with blue workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-019",
+      "title": "dark display with purple workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-020",
+      "title": "dark display with rose workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-021",
+      "title": "dark display with red workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-022",
+      "title": "dark display with orange workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-023",
+      "title": "dark display with teal workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-024",
+      "title": "dark display with gray workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-025",
+      "title": "dim display with emerald workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-026",
+      "title": "dim display with blue workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-027",
+      "title": "dim display with purple workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-028",
+      "title": "dim display with rose workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-029",
+      "title": "dim display with red workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-030",
+      "title": "dim display with orange workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-031",
+      "title": "dim display with teal workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-032",
+      "title": "dim display with gray workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-033",
+      "title": "oled display with emerald workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-034",
+      "title": "oled display with blue workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-035",
+      "title": "oled display with purple workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-036",
+      "title": "oled display with rose workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-037",
+      "title": "oled display with red workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-038",
+      "title": "oled display with orange workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-039",
+      "title": "oled display with teal workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-040",
+      "title": "oled display with gray workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-041",
+      "title": "sepia display with emerald workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-042",
+      "title": "sepia display with blue workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-043",
+      "title": "sepia display with purple workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-044",
+      "title": "sepia display with rose workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-045",
+      "title": "sepia display with red workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-046",
+      "title": "sepia display with orange workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-047",
+      "title": "sepia display with teal workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    },
+    {
+      "id": "DC-BDD-048",
+      "title": "sepia display with gray workspace",
+      "file": "tests/automation/bdd/appearance.feature"
+    }
+  ]
+}

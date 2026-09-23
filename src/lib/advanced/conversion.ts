@@ -35,8 +35,20 @@ export async function textPdf(text: string) {
     let current = "";
     for (const c of para.replaceAll("\t", "    ")) {
       if (font.widthOfTextAtSize(current + c, 11) > page.getWidth() - 80) {
-        line(current);
-        current = c;
+        if (/\s/.test(c)) {
+          line(current.trimEnd());
+          current = "";
+        } else {
+          const space = current.lastIndexOf(" ");
+          if (space > 0) {
+            line(current.slice(0, space));
+            current = current.slice(space + 1) + c;
+          } else {
+            // A token wider than the page still needs a character boundary.
+            line(current);
+            current = c;
+          }
+        }
       } else current += c;
     }
     line(current);

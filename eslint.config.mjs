@@ -6,6 +6,7 @@ export default defineConfig([
   ...nextTs,
   globalIgnores([
     ".next/**",
+    "automation-results/**",
     "public/pdfjs/**",
     "public/ocr/**",
     "public/security/**",

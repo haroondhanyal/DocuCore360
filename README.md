@@ -20,6 +20,7 @@ The application includes **29 working tool routes**, a personal file library, ac
 - [Local email](#local-email-inbox)
 - [Architecture](#architecture)
 - [Privacy and limits](#security-and-practical-limits)
+- [Complete automation](#complete-automation)
 - [Testing and commands](#quality-and-operations)
 - [Deployment and backups](#deployment-and-backups)
 - [Troubleshooting](#troubleshooting)
@@ -250,6 +251,24 @@ docs/                 Capabilities, operations, release evidence and screenshots
 
 See the [capability matrix](docs/CAPABILITIES.md) for exact boundaries.
 
+## Complete automation
+
+DocuCore includes a separate **400-scenario functional automation framework**, plus **20 k6 performance workloads** and the existing **55 unit/database tests**. It follows the UI/API/BDD/report separation used in LedgerMate360.
+
+- **352 Playwright/API cases:** responsive tools, search/favourites, accessibility, custom colours, account/security validation and real document exports, including the original 37 regression journeys.
+- **48 Cucumber scenarios:** executable Given/When/Then coverage across six display modes and eight workspace palettes.
+- **20 native k6 workloads:** public and authenticated smoke/load checks with latency, error-rate and content thresholds.
+- **One combined dashboard and Allure report:** scenario outcomes, steps, screenshots, videos, traces and performance metrics, with separate layer counts.
+
+```bash
+npm run automation:complete
+npm run automation:open
+```
+
+Open **http://localhost:4173** after the run. See the [full setup and reporting guide](docs/automation/README.md), [400-case inventory](docs/automation/SCENARIOS.md) and [sanitized latest report](docs/automation/latest/index.html). GitHub Actions runs the same workflow with disposable PostgreSQL/Mailpit and retains report artifacts. Local performance results are bounded smoke/load measurements, not a production capacity guarantee.
+
+![Combined automation report: 400 functional, 20 performance and 55 unit checks](docs/screenshots/automation-report.png)
+
 ## Quality and operations
 
 ```sh
@@ -300,7 +319,7 @@ LOCAL_MAIL_TEST=1 npm run test:e2e
 
 On PowerShell, set `$env:LOCAL_MAIL_TEST="1"` before running the test command. Use a dedicated test database: these suites create and delete synthetic accounts and files.
 
-**Recorded local verification (22 September 2026):** 55 unit/database tests and all 37 Chromium scenarios passed, along with lint, TypeScript and the production build. A WebKit PDF merge smoke test also passed in prior verification. Firefox verification remains incomplete because of a browser-profile startup issue; a full cross-browser pass is not claimed.
+**Recorded local verification (23 September 2026):** all 400 functional scenarios (352 Playwright/API + 48 Cucumber), 20 k6 workloads and 55 unit/database tests passed in one complete run, along with lint, TypeScript and the production build. Allure contains 475 passing checks across these separate layers. The [latest sanitized results](docs/automation/latest/results.json) preserve the tested source fingerprint and stage outcomes. A WebKit PDF merge smoke test also passed in prior verification. Firefox verification remains incomplete because of a browser-profile startup issue; a full cross-browser pass is not claimed.
 
 ## Deployment and backups
 

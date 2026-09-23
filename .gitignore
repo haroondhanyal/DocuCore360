@@ -24,3 +24,5 @@ backups/
 deploy/.env
 
 /test-results-cross-browser/
+
+/automation-results/

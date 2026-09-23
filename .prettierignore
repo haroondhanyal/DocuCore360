@@ -12,3 +12,6 @@ next-env.d.ts
 public/ocr
 
 public/security/
+
+automation-results/
+docs/automation/latest/

@@ -1,0 +1,61 @@
+name: DocuCore complete automation
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: automation-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: docucore
+          POSTGRES_PASSWORD: local-ci-only
+          POSTGRES_DB: docucore_automation
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U docucore -d docucore_automation"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+      mailpit:
+        image: axllent/mailpit:v1.27.4
+        ports: ["1025:1025", "8025:8025"]
+    env:
+      DATABASE_URL: postgresql://docucore:local-ci-only@localhost:5432/docucore_automation
+      APP_URL: http://localhost:3000
+      SMTP_HOST: 127.0.0.1
+      SMTP_PORT: "1025"
+      SMTP_SECURE: "false"
+      SMTP_ALLOW_INSECURE: "true"
+      SMTP_FROM: DocuCore Test <test@example.test>
+      LOCAL_MAIL_TEST: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run db:deploy
+      - run: docker pull grafana/k6:1.6.1
+      - run: npm run automation:complete
+      - name: Upload combined report and evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: docucore-automation-${{ github.run_id }}
+          path: automation-results/
+          retention-days: 14
+          if-no-files-found: warn
