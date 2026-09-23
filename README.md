@@ -269,7 +269,7 @@ Open **http://localhost:4173** after the run. See the [full setup and reporting 
 
 ![Combined automation report: 400 functional, 20 performance and 55 unit checks](docs/screenshots/automation-report.png)
 
-The Allure overview includes **Raja Haroon · QA Automation**, project/run date and DocuCore branding. Suites and categories separate **UI, APIs, BDD, Performance and Unit / Database**. Open the k6 link for all 20 workloads and raw metrics. Native browser screenshots/videos/traces and framework hooks remain attached; API/load cases include execution or threshold evidence rather than browser recordings. History is retained across complete runs for status, duration, retries and category trends.
+The Allure overview includes **Raja Haroon · QA Automation**, project/run date and DocuCore branding. Suites and categories separate **UI, APIs, BDD, Performance and Unit / Database**. Open the k6 link for a performance dashboard with latency charts, summary cards, smoke/load filters and raw metrics. Its **Open performance Allure** button opens a dedicated branded report containing only the 20 k6 workloads. Native browser screenshots/videos/traces and framework hooks remain attached; API/load cases include execution or threshold evidence rather than browser recordings. History is retained across complete runs for status, duration, retries and category trends.
 
 ## Quality and operations
 

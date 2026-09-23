@@ -135,11 +135,7 @@ html = html
     `<body><header class="qa-brand"><img src="docucore-logo.svg" alt="DocuCore 360 logo"><div><strong>DocuCore 360 · QA Automation</strong><small>${escape(owner)} · ${escape(date)}</small><small>UI · APIs · BDD · Performance</small></div><a href="../k6/index.html">k6 · All 20 workloads →</a></header>`,
   );
 writeFileSync(`${report}/index.html`, html);
-mkdirSync(`${root}/k6`, { recursive: true });
-writeFileSync(
-  `${root}/k6/index.html`,
-  `<!doctype html><html lang="en"><meta charset="utf-8"><title>DocuCore 360 · k6 Performance</title><style>body{font:16px system-ui;background:#f3f7f6;padding:30px;color:#123e34}img{width:96px}table{border-collapse:collapse;width:100%;background:white}td,th{padding:14px;border:1px solid #cdded7;text-align:left}a{color:#126e59}</style><img src="../logo.svg" alt="DocuCore logo"><h1>DocuCore 360 · k6 Performance</h1><p>${escape(owner)} · QA Automation · ${escape(date)}</p><p><a href="../allure-report/index.html">← Combined Allure report</a> · <a href="../k6.json">Raw k6 metrics</a></p><p>20 actual smoke/load workloads. API/load executions have metrics and threshold evidence; they do not produce browser screenshots or videos.</p><table><tr><th>Case</th><th>Workload</th><th>Status</th><th>P95</th><th>Error rate</th><th>Checks</th></tr>${summary.performance.map((p) => `<tr><td>${p.id}</td><td>${p.title}</td><td>${p.status}</td><td>${p.p95Ms?.toFixed(2)} ms</td><td>${(p.errorRate * 100).toFixed(2)}%</td><td>${(p.checkRate * 100).toFixed(0)}%</td></tr>`).join("")}</table></html>`,
-);
+execFileSync("node", ["scripts/automation/performance-report.mjs"], { stdio: "inherit" });
 mkdirSync(".automation-history", { recursive: true });
 cpSync(`${report}/history`, ".automation-history/history", { recursive: true });
 console.log(

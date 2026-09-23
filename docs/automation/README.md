@@ -149,3 +149,17 @@ Latest report audit: **261 UI + 91 API + 48 BDD + 20 k6 + 55 unit/database = 475
 ![Allure trend charts](../screenshots/allure-trends.png)
 
 ![Dedicated k6 workload report](../screenshots/k6-performance.png)
+
+## Dedicated performance dashboard and Allure
+
+Open **http://localhost:4173/k6/index.html** for workload pass totals, request volume/rate, actual HTTP error/check rates, a p95 comparison chart, smoke/load filters and expandable threshold checks. The **Open performance Allure** button opens **http://localhost:4173/k6/allure-report/index.html**, a separate branded 20-case report with Smoke tests and Sustained load suites, executor/environment metadata, threshold steps and measured JSON attachments. Combined Allure remains available from the dashboard. This follows LedgerMate's dedicated performance Allure layout.
+
+To regenerate presentation from existing measurements without rerunning tests:
+
+```bash
+node scripts/automation/performance-report.mjs
+```
+
+The complete automation command generates both views automatically. Charts use summary metrics, not invented time-series. Dedicated performance Allure reports zero adapter duration per workload; measured response latency is in the dashboard and attached metrics. Its history is retained separately, and regenerating a measured run does not duplicate its trend samples.
+
+![Dedicated performance Allure](../screenshots/k6-allure.png)
