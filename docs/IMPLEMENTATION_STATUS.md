@@ -80,3 +80,9 @@ README product images now come from the current workspace and refreshed profile/
 History persists across complete local runs and is cached per branch in GitHub Actions, enabling real status, duration, retry and category trend charts. Hosted CI has an external blocker: GitHub run 35801756243 did not start any steps because the account is locked due to a billing issue. This account-level restriction requires the repository owner's billing action; local test success does not imply hosted CI success.
 
 Final verification: all 400 functional scenarios, 20 k6 workloads and 55 unit/database tests passed with zero skips/failures; lint and TypeScript passed. Generated Allure suites/categories contain 261 UI, 91 APIs, 48 BDD, 20 Performance and 55 Unit / Database cases. An attachment audit confirmed screenshots/videos on every UI and BDD result and JSON execution evidence on every API/k6 result. Browser checks verified branding, the 475-check overview, k6 navigation and all 20 workload rows.
+
+## Interactive performance reporting and official k6 timeline
+
+Added persistent dark/light appearance, P95/P99/average comparison, slowest-first sorting, shared chart/table filters and a 20-row CSV export. Each native or Docker k6 execution now exports the official Grafana k6 HTML report with one-second aggregation and its HTTP listener disabled. The dashboard links to this actual time-series export and the dedicated performance Allure report.
+
+A fresh complete run passed all 400 functional, 20 performance and 55 unit/database checks, plus lint and TypeScript. Browser verification covered theme persistence, P99 numeric ordering, shared filters, CSV contents, mobile overflow and native report navigation with no JavaScript errors. The native report rendered request-rate, latency, VU and transfer-rate charts. README and report screenshots were refreshed from this run. The known GitHub account billing lock remains external to local verification.

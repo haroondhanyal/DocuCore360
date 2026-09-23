@@ -163,3 +163,15 @@ node scripts/automation/performance-report.mjs
 The complete automation command generates both views automatically. Charts use summary metrics, not invented time-series. Dedicated performance Allure reports zero adapter duration per workload; measured response latency is in the dashboard and attached metrics. Its history is retained separately, and regenerating a measured run does not duplicate its trend samples.
 
 ![Dedicated performance Allure](../screenshots/k6-allure.png)
+
+## Interactive performance analysis and native k6 export
+
+The dashboard supports persistent dark/light mode, P95/P99/average metric selection, slowest-first sorting, shared search/profile filtering for chart and table, and a CSV download of all workload metrics. KPI cards always describe the whole run; chart/table filters narrow workload detail.
+
+Each performance execution also exports **Grafana k6’s official web dashboard report** at `http://localhost:4173/k6-native.html`. This self-contained report includes real time-series recorded during that run. It is linked prominently from the DocuCore dashboard. The runner enables `K6_WEB_DASHBOARD`, sets the aggregation period to 1 second for the short local run, exports HTML and disables the dashboard listener with port `-1` so automation can exit normally. Both native-binary and Docker execution use these options. The existing tested k6 version remains pinned; this change upgrades reporting rather than claiming an engine migration.
+
+The custom workload chart uses summary metrics; the official native export provides time-series analysis. Neither view fabricates samples or implies production capacity. See the [official Grafana k6 dashboard documentation](https://grafana.com/docs/k6/latest/results-output/web-dashboard/).
+
+![Native Grafana k6 report from the DocuCore run](../screenshots/k6-native.png)
+
+![Performance dashboard in light mode](../screenshots/k6-performance-light.png)
