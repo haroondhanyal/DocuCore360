@@ -115,6 +115,18 @@ writeFileSync(
 );
 mkdirSync(".automation-history", { recursive: true });
 cpSync(`${report}/history`, ".automation-history/performance", { recursive: true });
+// Preserve Grafana's notices and native charts while identifying the DocuCore run.
+const nativeReport = `${root}/k6-native.html`;
+if (existsSync(nativeReport)) {
+  let nativeHtml = readFileSync(nativeReport, "utf8");
+  if (!nativeHtml.includes('id="docucore-native-brand"')) {
+    nativeHtml = nativeHtml.replace(
+      "<body>",
+      `<body><header id="docucore-native-brand" style="background:#123e34;color:white;padding:20px 28px;display:flex;align-items:center;gap:20px;font:16px system-ui;flex-wrap:wrap"><img src="logo.svg" alt="DocuCore 360 logo" width="72" height="72"><div><strong style="font-size:24px">DocuCore 360 · Performance</strong><div>${esc(owner)} · QA Automation</div><small>Recorded k6 run · Grafana native charts</small></div><a href="k6/index.html" style="color:#b6f8de;margin-left:auto">Performance dashboard →</a></header>`,
+    );
+    writeFileSync(nativeReport, nativeHtml);
+  }
+}
 const max = Math.max(1, ...cases.map((p) => p.p95Ms || 0));
 const passed = cases.filter((p) => p.status === "passed").length;
 const metric = (name) => raw.metrics?.[name]?.values || {};

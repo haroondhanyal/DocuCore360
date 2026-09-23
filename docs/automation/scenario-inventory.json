@@ -1,6 +1,6 @@
 {
-  "functional": 400,
-  "playwright": 352,
+  "functional": 420,
+  "playwright": 372,
   "cucumber": 48,
   "performance": 20,
   "unit": 55,
@@ -1134,6 +1134,106 @@
       "title": "DC-TEXT-005 Text-to-PDF round trip variant 5",
       "file": "tests/automation/specs/documents.spec.ts",
       "id": "DC-TEXT-005"
+    },
+    {
+      "title": "DC-OWN-001 denies cross-account file download",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-OWN-001"
+    },
+    {
+      "title": "DC-OWN-002 denies cross-account file rename",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-OWN-002"
+    },
+    {
+      "title": "DC-OWN-003 denies cross-account file deletion",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-OWN-003"
+    },
+    {
+      "title": "DC-OWN-004 denies cross-account version listing",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-OWN-004"
+    },
+    {
+      "title": "DC-OWN-005 denies cross-account version creation",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-OWN-005"
+    },
+    {
+      "title": "DC-OWN-006 denies cross-account version restore",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-OWN-006"
+    },
+    {
+      "title": "DC-OWN-007 denies cross-account draft reading",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-OWN-007"
+    },
+    {
+      "title": "DC-OWN-008 denies cross-account draft replacement",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-OWN-008"
+    },
+    {
+      "title": "DC-OWN-009 denies cross-account draft deletion",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-OWN-009"
+    },
+    {
+      "title": "DC-OWN-010 denies cross-account folder rename",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-OWN-010"
+    },
+    {
+      "title": "DC-OWN-011 foreign folder deletion is a harmless no-op",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-OWN-011"
+    },
+    {
+      "title": "DC-OWN-012 folder listing excludes other accounts",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-OWN-012"
+    },
+    {
+      "title": "DC-FOLDER-STATE-001 duplicate creation preserves original",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-FOLDER-STATE-001"
+    },
+    {
+      "title": "DC-FOLDER-STATE-002 conflicting rename leaves both names",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-FOLDER-STATE-002"
+    },
+    {
+      "title": "DC-FOLDER-STATE-003 self parenting rejected",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-FOLDER-STATE-003"
+    },
+    {
+      "title": "DC-FOLDER-STATE-004 descendant cycle rejected",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-FOLDER-STATE-004"
+    },
+    {
+      "title": "DC-FOLDER-STATE-005 cannot create under a foreign parent",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-FOLDER-STATE-005"
+    },
+    {
+      "title": "DC-FOLDER-STATE-006 cannot move under a foreign parent",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-FOLDER-STATE-006"
+    },
+    {
+      "title": "DC-FOLDER-STATE-007 deleting parent retains child at root",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-FOLDER-STATE-007"
+    },
+    {
+      "title": "DC-FOLDER-STATE-008 names normalize whitespace on create and rename",
+      "file": "tests/automation/specs/ownership.spec.ts",
+      "id": "DC-FOLDER-STATE-008"
     },
     {
       "title": "DC-GUEST-001 GET /api/files requires a session",

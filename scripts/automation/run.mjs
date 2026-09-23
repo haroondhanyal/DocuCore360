@@ -20,7 +20,7 @@ if (existsSync(`${dir}/allure-report/history`)) {
   mkdirSync(".automation-history", { recursive: true });
   cpSync(`${dir}/allure-report/history`, ".automation-history/history", { recursive: true });
 }
-rmSync(dir, { recursive: true, force: true });
+rmSync(dir, { recursive: true, force: true, maxRetries: 3, retryDelay: 200 });
 mkdirSync(dir, { recursive: true });
 const git = (args) => execFileSync("git", args, { encoding: "utf8" }).trim();
 const sourceFiles = git(["ls-files", "--cached", "--others", "--exclude-standard"])

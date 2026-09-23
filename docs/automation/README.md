@@ -4,7 +4,7 @@ A separate, repeatable automation workflow for the document workspace. The struc
 
 ## Coverage and counting
 
-**400 functional scenarios** are inventoried before execution. Matrix variants are explicit: a different viewport, document input, display/palette combination or negative request is a separate scenario. These are not 400 distinct product features.
+**420 functional scenarios** are inventoried before execution. Matrix variants are explicit: a different viewport, document input, display/palette combination or negative request is a separate scenario. These are not 420 distinct product features.
 
 | Area                            |   Cases | What is asserted                                                                                                                          |
 | ------------------------------- | ------: | ----------------------------------------------------------------------------------------------------------------------------------------- |
@@ -17,11 +17,12 @@ A separate, repeatable automation workflow for the document workspace. The struc
 | API security                    |      41 | 13 session boundaries and 28 missing/untrusted-origin mutation requests                                                                   |
 | API input validation            |      48 | 20 profile, 12 signup, 8 folder and 8 file-upload rejection cases                                                                         |
 | Cucumber BDD                    |      48 | 6 display modes × 8 palettes: select, render, reload and restore                                                                          |
-| **Functional total**            | **400** | **352 Playwright/API + 48 Cucumber**                                                                                                      |
+| Ownership and folder integrity  |      20 | Cross-account resource protection and folder state transitions                                                                            |
+| **Functional total**            | **420** | **372 Playwright/API + 48 Cucumber**                                                                                                      |
 
 **20 k6 workloads** and **55 existing unit/database tests** are reported separately. Unit tests are retained because they check document/security logic and database behavior cheaply. They are not added to the functional count.
 
-The [scenario inventory](SCENARIOS.md) and [all 400 IDs](scenario-inventory.json) map coverage to executable sources. `automation:inventory` fails if counts or IDs drift. The 37 existing regression cases receive report IDs without duplicating their execution. The standard `npm run test:e2e` remains the original focused regression entry point.
+The [scenario inventory](SCENARIOS.md) and [all 420 IDs](scenario-inventory.json) map coverage to executable sources. `automation:inventory` fails if counts or IDs drift. The 37 existing regression cases receive report IDs without duplicating their execution. The standard `npm run test:e2e` remains the original focused regression entry point.
 
 ## One-command complete run
 
@@ -44,15 +45,15 @@ npm run automation:open
 
 Open **http://localhost:4173** for the branded combined dashboard, then follow links to Allure and Playwright HTML. If port 3000 is not healthy, the complete runner builds and starts a production app, and stops that process when finished. An already running healthy app is reused; rebuild it first after application changes. macOS runs temporarily inhibit idle sleep only for the automation process lifetime.
 
-The complete runner cleans previous raw results, records the source commit, dirty-tree flag and source SHA-256, checks the 400-case inventory, runs lint/TypeScript/unit checks, executes Playwright and Cucumber, runs k6, and generates reports. Later stages still execute after a test failure so the report remains useful. A missing result, skipped/failed/timed-out scenario, failed performance threshold, or failed stage prevents a green complete result and causes a nonzero command exit. No automatic retries are enabled in this automation configuration.
+The complete runner cleans previous raw results, records the source commit, dirty-tree flag and source SHA-256, checks the 420-case inventory, runs lint/TypeScript/unit checks, executes Playwright and Cucumber, runs k6, and generates reports. Later stages still execute after a test failure so the report remains useful. A missing result, skipped/failed/timed-out scenario, failed performance threshold, or failed stage prevents a green complete result and causes a nonzero command exit. No automatic retries are enabled in this automation configuration.
 
 ## Independently runnable sections
 
 | Command                          | Scope                                                         |
 | -------------------------------- | ------------------------------------------------------------- |
-| `npm run automation:inventory`   | Validate/generate the 400-case catalog                        |
+| `npm run automation:inventory`   | Validate/generate the 420-case catalog                        |
 | `npm run automation:ui`          | Browser matrices and existing regression journeys (263 cases) |
-| `npm run automation:api`         | Focused security/validation matrices (89 cases)               |
+| `npm run automation:api`         | Focused security/validation matrices (109 cases)              |
 | `npm run automation:bdd`         | 48 actual Gherkin/Cucumber scenarios                          |
 | `npm run automation:performance` | 20 native k6 engine workloads                                 |
 | `npm run automation:report`      | Rebuild the combined dashboard from current raw results       |
@@ -103,7 +104,7 @@ These are bounded local smoke/load measurements, not production capacity, soak, 
 | Complete run provenance/stages | `automation-results/run.json`                                           |
 | Sanitized shareable snapshot   | [latest report](latest/index.html), [results JSON](latest/results.json) |
 
-Allure groups functional, Cucumber, performance and unit results; its total is therefore **475 checks**, while the product's functional inventory remains **400**. Statuses are taken from actual execution. The report never changes failed results to passed for presentation. The snapshot is published only after a complete green run. GitHub renders HTML files as source; download/open the snapshot or use `automation:open` for the interactive dashboard.
+Allure groups functional, Cucumber, performance and unit results; its total is therefore **495 checks**, while the product's functional inventory remains **420**. Statuses are taken from actual execution. The report never changes failed results to passed for presentation. The snapshot is published only after a complete green run. GitHub renders HTML files as source; download/open the snapshot or use `automation:open` for the interactive dashboard.
 
 ## GitHub Actions
 
@@ -128,7 +129,7 @@ docs/automation/              Inventory, instructions and sanitized latest repor
 
 ## Verified report previews
 
-The complete local run on 23 September 2026 passed 400 functional scenarios, 20 k6 workloads and 55 unit/database checks. The combined dashboard search/status filters and the 475-check Allure overview were also opened and verified in Chromium.
+The complete local run on 23 September 2026 passed 420 functional scenarios, 20 k6 workloads and 55 unit/database checks. The combined dashboard search/status filters and the 495-check Allure overview were also opened and verified in Chromium.
 
 ![Combined report](../screenshots/automation-report.png)
 
@@ -144,7 +145,7 @@ Playwright before/after hooks and Cucumber hooks remain in native results. Brows
 
 Allure history is preserved under ignored `.automation-history/` before results are cleared and restored into the next report. GitHub Actions caches it per branch. Status, duration, retries and category trends use actual runs only; no retry failures or historical samples are invented. Initial reports have one sample, and subsequent complete runs extend the charts. See the official [Allure history format](https://allurereport.org/docs/how-it-works-history-files/), [executor metadata](https://allurereport.org/docs/how-it-works-executor-file/) and [category definitions](https://allurereport.org/docs/how-it-works-categories-file/).
 
-Latest report audit: **261 UI + 91 API + 48 BDD + 20 k6 + 55 unit/database = 475 passing checks**. All 261 UI and 48 BDD results have screenshots and videos; all 91 API and 20 performance results have JSON execution evidence. The UI/API split includes two API-only legacy journeys in addition to the 89 dedicated API validation/security cases.
+Latest report audit: **261 UI + 111 API + 48 BDD + 20 k6 + 55 unit/database = 495 passing checks**. All 261 UI and 48 BDD results have screenshots and videos; all 111 API and 20 performance results have JSON execution evidence. The UI/API split includes two API-only legacy journeys in addition to the 109 dedicated API validation/security cases.
 
 ![Allure trend charts](../screenshots/allure-trends.png)
 
@@ -175,3 +176,5 @@ The custom workload chart uses summary metrics; the official native export provi
 ![Native Grafana k6 report from the DocuCore run](../screenshots/k6-native.png)
 
 ![Performance dashboard in light mode](../screenshots/k6-performance-light.png)
+
+The latest coverage expansion adds 12 cross-account resource-access cases and eight folder-integrity cases. The Grafana native export now also displays DocuCore branding and a dashboard return link, while preserving Grafana attribution and interactive charts.

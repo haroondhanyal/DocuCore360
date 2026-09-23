@@ -1,6 +1,6 @@
 # DocuCore automation inventory
 
-400 functional scenarios: 352 Playwright/API + 48 Cucumber. The 20 k6 workloads and existing 55 unit/database tests are separate counts.
+400 functional scenarios: 372 Playwright/API + 48 Cucumber. The 20 k6 workloads and existing 55 unit/database tests are separate counts.
 
 | Group | Cases |
 |---|---:|
@@ -14,6 +14,8 @@
 | DC-META | 8 |
 | DC-IMAGE | 6 |
 | DC-TEXT | 5 |
+| DC-OWN | 12 |
+| DC-FOLDER-STATE | 8 |
 | DC-GUEST | 13 |
 | DC-CSRF | 28 |
 | DC-PROFILE-VAL | 20 |
