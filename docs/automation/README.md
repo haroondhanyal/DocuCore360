@@ -133,3 +133,19 @@ The complete local run on 23 September 2026 passed 400 functional scenarios, 20 
 ![Combined report](../screenshots/automation-report.png)
 
 ![Allure overview](../screenshots/allure-overview.png)
+
+## Branded Allure report and trends
+
+The combined Allure report identifies DocuCore 360, QA Automation, executor Raja Haroon (override with `QA_EXECUTOR`), run date and tested source. Its header includes the DocuCore logo and a link to `http://localhost:4173/k6/index.html`, which lists all 20 k6 workloads and links to raw metrics.
+
+Top-level suites and categories separate UI, APIs, BDD, Performance and Unit / Database. Categories deliberately classify passing results too; a category count is a layer count, not a defect count. Individual statuses still show actual outcomes. API classification uses the recorded Playwright page fixture; mixed browser/API journeys belong to UI.
+
+Playwright before/after hooks and Cucumber hooks remain in native results. Browser scenarios include framework-generated screenshots, video and trace attachments. API cases include recorded execution steps/assertions; k6 cases attach measured metrics and threshold checks. API and load runners have no browser screen to record, so screenshots/videos are not fabricated for them.
+
+Allure history is preserved under ignored `.automation-history/` before results are cleared and restored into the next report. GitHub Actions caches it per branch. Status, duration, retries and category trends use actual runs only; no retry failures or historical samples are invented. Initial reports have one sample, and subsequent complete runs extend the charts. See the official [Allure history format](https://allurereport.org/docs/how-it-works-history-files/), [executor metadata](https://allurereport.org/docs/how-it-works-executor-file/) and [category definitions](https://allurereport.org/docs/how-it-works-categories-file/).
+
+Latest report audit: **261 UI + 91 API + 48 BDD + 20 k6 + 55 unit/database = 475 passing checks**. All 261 UI and 48 BDD results have screenshots and videos; all 91 API and 20 performance results have JSON execution evidence. The UI/API split includes two API-only legacy journeys in addition to the 89 dedicated API validation/security cases.
+
+![Allure trend charts](../screenshots/allure-trends.png)
+
+![Dedicated k6 workload report](../screenshots/k6-performance.png)

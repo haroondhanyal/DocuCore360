@@ -1,5 +1,5 @@
 import { spawn, execFileSync } from "node:child_process";
-import { mkdirSync, rmSync, writeFileSync, readFileSync, existsSync } from "node:fs";
+import { mkdirSync, rmSync, writeFileSync, readFileSync, existsSync, cpSync } from "node:fs";
 import os from "node:os";
 import { createHash } from "node:crypto";
 if (process.env.JAVA_HOME && !existsSync(process.env.JAVA_HOME)) delete process.env.JAVA_HOME;
@@ -16,6 +16,10 @@ if (process.platform === "darwin") {
   awake.on("error", () => {});
 }
 const dir = "automation-results";
+if (existsSync(`${dir}/allure-report/history`)) {
+  mkdirSync(".automation-history", { recursive: true });
+  cpSync(`${dir}/allure-report/history`, ".automation-history/history", { recursive: true });
+}
 rmSync(dir, { recursive: true, force: true });
 mkdirSync(dir, { recursive: true });
 const git = (args) => execFileSync("git", args, { encoding: "utf8" }).trim();
@@ -98,14 +102,7 @@ try {
   await stage("cucumber", "npx", ["cucumber-js"]);
   await stage("k6", "node", ["scripts/automation/performance.mjs"]);
   await stage("combined report", "node", ["scripts/automation/report.mjs"]);
-  await stage("allure report", "npx", [
-    "allure",
-    "generate",
-    `${dir}/allure-results`,
-    "--clean",
-    "-o",
-    `${dir}/allure-report`,
-  ]);
+  await stage("allure report", "node", ["scripts/automation/allure.mjs"]);
   await stage("report snapshot", "node", ["scripts/automation/report.mjs", "--publish"]);
   // Include the snapshot stage itself in final run metadata.
   execFileSync("node", ["scripts/automation/report.mjs", "--publish"], { stdio: "inherit" });

@@ -8,7 +8,7 @@ The application includes **29 working tool routes**, a personal file library, ac
 
 [Explore the repository](https://github.com/haroondhanyal/DocuCore360) · [Capabilities](docs/CAPABILITIES.md) · [Deployment](docs/DEPLOYMENT.md) · [Verification](docs/IMPLEMENTATION_STATUS.md)
 
-![DocuCore 360 workspace](docs/screenshots/overview-v0.4.png)
+![Latest DocuCore 360 workspace](docs/screenshots/overview-latest.png)
 
 ## Contents
 
@@ -61,9 +61,9 @@ Use **Settings → View all records** (`/records`) to browse your own saved file
 
 Core document tools can be used without an account; saved files, account drafts and profiles require sign-in.
 
-![Personal account profile](docs/screenshots/profile-desktop.png)
+![Latest personal account profile](docs/screenshots/profile-desktop.png)
 
-![Purple workspace with high contrast and colourful buttons](docs/screenshots/appearance-dark-purple.png)
+![Latest display mode, workspace palette and button colour settings](docs/screenshots/appearance-dark-purple.png)
 
 ## Typical workflows
 
@@ -268,6 +268,8 @@ npm run automation:open
 Open **http://localhost:4173** after the run. See the [full setup and reporting guide](docs/automation/README.md), [400-case inventory](docs/automation/SCENARIOS.md) and [sanitized latest report](docs/automation/latest/index.html). GitHub Actions runs the same workflow with disposable PostgreSQL/Mailpit and retains report artifacts. Local performance results are bounded smoke/load measurements, not a production capacity guarantee.
 
 ![Combined automation report: 400 functional, 20 performance and 55 unit checks](docs/screenshots/automation-report.png)
+
+The Allure overview includes **Raja Haroon · QA Automation**, project/run date and DocuCore branding. Suites and categories separate **UI, APIs, BDD, Performance and Unit / Database**. Open the k6 link for all 20 workloads and raw metrics. Native browser screenshots/videos/traces and framework hooks remain attached; API/load cases include execution or threshold evidence rather than browser recordings. History is retained across complete runs for status, duration, retries and category trends.
 
 ## Quality and operations
 
